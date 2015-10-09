@@ -1,0 +1,28 @@
+body {
+    margin-top: 11%;
+
+
+   
+  }
+  footer {
+margin-top: 50px;
+ position: absolute;
+  bottom: 0;
+  width: 100%;
+padding:8px;
+  background-color: #fcfe73; 
+  color: #d13423;
+  text-align: center
+
+}
+
+
+.container {
+  width: auto;
+  max-width: 680px;
+
+}
+
+#copyright {
+text-align: center;
+}

@@ -3,17 +3,17 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="<?php echo $put ?>css/bootstrap.min.css" rel="stylesheet" />
-	<link href="<?php echo $put ?>css/style.css" rel="stylesheet" />
-	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
 
-	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap.js"></script>
-	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo $put ?>js/npm.js"></script>
-	<script type="text/javascript" src="<?php echo $put ?>js/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap-image-gallery.js"></script>
-	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap-image-gallery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/npm.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-image-gallery.js"></script>
+	<script type="text/javascript" src="js/bootstrap-image-gallery.min.js"></script>
+
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
