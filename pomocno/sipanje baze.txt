@@ -1,0 +1,1 @@
+mysql -u root -p000000 --default_character_set=utf8 < C:\xampp\htdocs\NFY\baza\NFY.sql
