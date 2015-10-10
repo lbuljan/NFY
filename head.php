@@ -8,8 +8,8 @@
 	<link href="<?php echo $put ?>css/style.css" rel="stylesheet" />
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo $put ?>js/npm.js"></script>
 	<script type="text/javascript" src="<?php echo $put ?>js/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap-image-gallery.js"></script>
