@@ -210,6 +210,14 @@ padding: 20px;
 
 }
 
+.log2 {
+  margin: 10px;
+  width: 95%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 18px;
+
+}
 .dropdownkat{
  margin: 10px;
   width: 200px;
@@ -579,8 +587,8 @@ padding: 20px;
 
 
 .opg_slika {
-  height: 80%;
-  width: 80%;
+  height: 70%;
+  width: 70%;
   transition: width 0.2s, height 0.2s;
   border:5px solid #efefef;
   margin-bottom:10px;
@@ -589,10 +597,13 @@ padding: 20px;
 }
 
 .opg_slika:hover {
-  width:85%;
-  height: 85%;
- transition: width 0.2s, height 0.2s
-}
+  width:75%;
+  height: 75%;
+ transition: width 0.2s, height 0.2s;
+ padding: 0px 0px 0px 0px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+background-position: center center;}
 
 
 
@@ -678,7 +689,7 @@ padding: 20px;
 
 .opis {
   background-color: #e8e8e7;
-
+  font-size: 17px;
   padding-top:20px;
   padding-bottom:30px;
   padding-left:20px;

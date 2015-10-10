@@ -28,11 +28,16 @@
 
     <!-- Right nav -->
     <ul class="nav navbar-nav navbar-right">
+        <li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#pretraga">
+      <img src="<?php echo $put; ?>slike/search.png" style="max-width:20px;">
+   </button></li>
 	<?php if(!isset($_SESSION["operater"])):?>
+
      <li class="navbar-text"><a href="<?php echo $put ?>user/formaPrijava.php"><button class="btn2 btn-default"> Prijava</button></a></li>
       <li class="navbar-text"><a href="<?php echo $put ?>user/formaRegistracijaKorisnik.php"><button class="btn2 btn-default">Registracija kao korisnik</button></a></li>
      <li class="navbar-text"> <a href="<?php echo $put ?>user/formaRegistracijaOpg.php"><button class="btn2 btn-default">Registracija kao OPG</button></a></li>
-	<?php else:?>
+
+  <?php else:?>
 	<?php if($_SESSION["operater"]->ime):?>
 		<li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
 		<li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#myModal">Košarica</button></li>
@@ -90,7 +95,30 @@
 		<?php endforeach;?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="pretraga" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Pretraga</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="log2">
+        <br />
+        <button type="button" class="btn btn-default" style="margin-left:10px;">Pretraži</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>
       </div>
     </div>
 
