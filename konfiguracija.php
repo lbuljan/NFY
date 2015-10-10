@@ -1,7 +1,7 @@
 <?php
 
 $server="localhost";
-$baza="";
+$baza="nfy";
 $user="root";
 $pass="000000";
 $put="/NFY/";
