@@ -1,6 +1,10 @@
 <?php 	include_once '../konfiguracija.php';  ?>
 <?php
 if($_POST):
+	
+	print_r($_POST);
+	exit;
+
 	$limit=count($_FILES["slika"]["name"]);
 	$br=0;
 	$dir="../slike/proizvodi/";

@@ -45,7 +45,7 @@ create table proizvod (
 );
 
 create table komentar (
-	korisnik int not null,
+	korisnik int,
 	proizvod int,
 	opg int,
 	komentar text not null,
@@ -93,7 +93,7 @@ alter table komentar add foreign key (proizvod) references proizvod(sifra);
 alter table komentar add foreign key (opg) references opg(sifra);
 
 
-insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, administrator) values ("Luka", "Buljan", "A. Waldingera 5A", "Osijek", 31000, "admin@admin.os", md5("!admin@"), 1);
+insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, administrator, nickname) values ("Luka", "Buljan", "A. Waldingera 5A", "Osijek", 31000, "admin@admin.os", md5("!admin@"), 1, "The_admin");
 
 insert into opg(naziv, adresa, grad, post_broj, email, lozinka) values ("OPG Marić", "Vatroslava Doneganija 13", "Đakovo", 31400, "maric@opg.hr", md5("nemirna")),
 	("OPG Stojanović", "Glavna ulica 41", "Branjin vrh", 31301, "dajana@opg.hr", md5("dstoja")), ("OPG Jakopec", "Lorenza Jaegera 9", "Osijek", 31000, "jakopec@opg.hr", md5("žakope"));
