@@ -3,6 +3,7 @@
 <?php
 
 if($_POST):
+	print_r($_POST);
 	$registriraj = $con->prepare("insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:ime, :prezime, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
 	$registriraj->bindParam(":email", $_POST["email"]);
 	$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
@@ -10,14 +11,14 @@ if($_POST):
 	$registriraj->bindParam(":prezime", $_POST["prezime"]);
 	$registriraj->bindParam(":adresa", $_POST["adresa"]);
 	$registriraj->bindParam(":grad", $_POST["grad"]);
-	$registriraj->bindParam(":post_broj", $_POST["post_broj"]);
-	$registriraj->bindParam(":ziro", $_POST["ziro"]);
+	$registriraj->bindParam(":postanskibroj", $_POST["postanskibroj"]);
+	$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
 	$registriraj->bindParam(":paypal", $_POST["paypal"]);
 	$registriraj->execute();
 	
 	$id=$con->lastInsertId();
-	//preusmjeri na korisnikovu stranicu profila
-		header("location: profil.php?u=$id");
+
+		//header("location: profil.php?u=$id");
 endif;
 ?>
 
@@ -67,7 +68,7 @@ Već ste registrirani? <br/>
 		var email=$("#email").val();
 		var lozinka=$("#lozinka").val();
 		var potvrdi=$("#ponovolozinka").val();
-		
+
 		if(!ime || !prezime || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
 			alert("Polja označena sa zvjezdicom moraju biti ispunjena");
 			return false;
@@ -75,7 +76,12 @@ Već ste registrirani? <br/>
 		if(lozinka != potvrdi){
 			alert("Lozinka se ne podudara s ponovljenom lozinkom");
 			return false;
-		}		
+		}
+		if($.isNumeric(pbroj)){} 
+			else {
+				alert("Poštanski broj mora biti brojčana vrijednost");
+				return false;
+			}
 	})
 </script>
 

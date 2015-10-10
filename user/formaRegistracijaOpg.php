@@ -7,13 +7,13 @@ if($_POST):
 	$registriraj->bindParam(":naziv", $_POST["naziv"]);
 	$registriraj->bindParam(":adresa", $_POST["adresa"]);
 	$registriraj->bindParam(":grad", $_POST["grad"]);
-	$registriraj->bindParam(":post_broj", $_POST["post_broj"]);
-	$registriraj->bindParam(":ziro", $_POST["ziro"]);
+	$registriraj->bindParam(":postanskibroj", $_POST["postanskibroj"]);
+	$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
 	$registriraj->bindParam(":paypal", $_POST["paypal"]);
 	$registriraj->execute();
 	
 	$id=$con->lastInsertId();
-	//preusmjeri na korisnikovu stranicu profila
+
 		header("location: profil.php?o=$id");
 endif;
 ?>
@@ -62,14 +62,19 @@ Već ste registrirani? <br/>
 		var lozinka=$("#lozinka").val();
 		var potvrdi=$("#ponovolozinka").val();
 		
-		/*if(!naziv || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
+		if(!naziv || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
 			alert("Polja označena sa zvjezdicom moraju biti ispunjena");
 			return false;
-		}*/
+		}
 		if(lozinka != potvrdi){
 			alert("Lozinka se ne podudara s ponovljenom lozinkom");
 			return false;
-		}		
+		}
+		if($.isNumeric(pbroj)){} 
+			else {
+				alert("Poštanski broj mora biti brojčana vrijednost");
+				return false;
+			}
 	})
 </script>
 
