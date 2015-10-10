@@ -33,7 +33,7 @@
 		  <div class="carousel-inner" role="listbox">
 		  <?php foreach($proizvodi as $prod):?>
 			<div class="item <?php echo $prod->sifra;?><?php if($prod->sifra==1): echo " active"; endif;?>">
-				<a href="<?php echo $put;?>proizvod/proizvod.php?p=<?php echo $prod->sifra;?>">
+				<a href="<?php echo $put;?>proizvodi/proizvod.php?p=<?php echo $prod->sifra;?>">
 				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?> class="img-responsive"">
 				</a>
 					<p><?php echo $prod->naziv;?> </p>
