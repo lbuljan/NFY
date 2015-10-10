@@ -11,12 +11,14 @@
 	 ?>
 
 <div class="row">
-<h1 class="naslov">PRIJAVA</h1>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h1 class="naslov">PRIJAVA</h1>
+	</div>
 </div>
 <div class="row">
 
 
-<div class="col-lg-9 col-lg-push-2 col-md-9 col-md-push-1 col-sm-7 col-sm-push-1 col-xs-9 col-xs-push-1 korisnik">
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 <div class="prijava">
 <form action="<?php echo $put;?>user/prijava.php" method="POST">
 	<input class="log" type="text" id="email" name="email" placeholder="Vaš e-mail" /><br />

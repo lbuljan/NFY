@@ -26,7 +26,7 @@
 
 <div class="row profil">
 
-	<div class="col-md-6 col-md-push-1">
+	<div class="col-lg-6 col-lg-push-1 col-md-7 col-md-push-1 col-sm-7 col-sm-push-1 col-xs-10 col-xs-push-1">
 	<h1>
 		<?php echo $korisnik->ime . " " . $korisnik->prezime;?><hr /></h1>
 		<p class="adresa">
@@ -40,7 +40,7 @@
 			</p>
 		
 	</div>
-	<div class="col-md-4">
+	<div class="col-lg-5 col-md-5 col-sm-5 col-xs-10 col-xs-push-1">
 	<?php if($korisnik->profilna):?>
 		<img class="prf" src="<?php echo $put;?>slike/korisnik/<?php echo $korisnik->profilna;?>" />
 	<?php else:?>
@@ -52,11 +52,11 @@
 
 
 <div class="row">
-	<div class="col-md-10 col-md-push-1">
+	<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 	<h1>Kupljeni proizvodi</h1>
 	<hr style="border-color:black;" />
 	</div>
-	<div class="col-md-10 col-md-push-1">
+	<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 		<?php foreach($history as $hs):
 		
 		$slike = $con->prepare("select naslovna from galerija where proizvod=:p");

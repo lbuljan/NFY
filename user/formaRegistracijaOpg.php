@@ -44,11 +44,13 @@ endif;
 	 ?>
 
 <div class="row">
-<h1 class="naslov">REGISTRIRAJ SE KAO OPG</h1>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<h1 class="naslov">REGISTRIRAJ SE KAO OPG</h1>
+	</div>
 </div>
 <div class="row">
 
-<div class="col-md-9 col-md-push-2 korisnik">
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 <div class="prijava">
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 	<input class="log" type="text" id="naziv" name="naziv" placeholder="Naziv OPG-a*" />
@@ -70,15 +72,14 @@ endif;
 </div>
 
 <div class="row">
-	<div class="col-md-2 col-md-push-5 registriraj">
-		<div>
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 vecreg">
 		Već ste registrirani? <br/>
 		<button class="btn1 btn-default" id="prijavi" type="submit" style="margin-top:15px;margin-bottom:20px;">
 		<a href="<?php echo $put ?>user/formaPrijava.php" style="color:#d6d6d5;text-decoration:none;">Prijavi se!</a>
 		</button>
 		</div>
 	</div>
-</div>
+
 
 
 <?php include "../js/skripte.php";?>
