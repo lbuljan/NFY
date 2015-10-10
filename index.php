@@ -26,7 +26,7 @@
 <div class="row slider">
 
 
-	<div class="col-lg-7 col-lg-push-3 col-md-7 col-md-push-3 col-sm-9 col-sm-push-2 col-xs-11 col-xs-push-1">
+	<div class="col-lg-7 col-lg-push-3 col-md-7 col-md-push-3 col-sm-9 col-sm-push-2 col-xs-12 col-xs-push-1">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 		  <div class="carousel-inner" role="listbox">
@@ -57,7 +57,7 @@
 <div class="row">
   <h1>Proizvođači</h1><br />
   <?php foreach($maker as $mk):?>
-  <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-12 proizvodi">
+  <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4 proizvodi">
 	<a href="user/profil.php?o=<?php echo $mk->sifra;?>">
 	  <?php if($mk->profilna):?>
 			<img class="opg_slika" src="slike/opg/<?php echo $mk->profilna;?>" />

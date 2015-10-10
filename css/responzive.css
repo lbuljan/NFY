@@ -2,6 +2,11 @@
 	.korisnik {
   margin-left:150px;
 }
+
+.opg_slika {
+  margin-left:-80px;
+
+}
 	
 	
 }
@@ -11,17 +16,33 @@
   margin-left:180px;
 }
 
+.opg_slika {
+  margin-left:-270px;
+
 }
 
-@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 770px) {
 	.korisnik {
   margin-left:100px;
 }
+.opg_slika {
+  margin-left:-150px;
+
+}
+
 }
 
 @media screen and (max-width: 640px) {
 	.korisnik {
   margin-left:0px;
+}
+
+.opg_slika {
+  margin-left:-250px;
+
 }
 }
 
