@@ -36,7 +36,7 @@ create table kor_pr(
 create table proizvod (
 	sifra int not null primary key auto_increment,
 	naziv varchar(20) not null,
-	k_opis varchar(200) not null,
+	k_opis text not null,
 	cijena decimal(18.2)not null,
 	kategorija varchar(50) not null
 );
@@ -44,7 +44,7 @@ create table proizvod (
 create table komentar (
 	korisnik int not null,
 	proizvod int not null,
-	komentar varchar(500) not null,
+	komentar text not null,
 	vrijeme datetime not null
 );
 
@@ -92,3 +92,10 @@ insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, admi
 
 insert into opg(naziv, adresa, grad, post_broj, email, lozinka) values ("OPG Mariæ", "Vatroslava Doneganija 13", "Ðakovo", 31400, "maric@opg.hr", md5("nemirna")),
 	("OPG Stojanoviæ", "Glavna ulica 41", "Branjin vrh", 31301, "dajana@opg.hr", md5("dstoja")), ("OPG Jakopec", "Lorenza Jaegera 9", "Osijek", 31000, "jakopec@opg.hr", md5("žakope"));
+	
+insert into proizvod(naziv, k_opis, cijena, kategorija) values ("Mariæ lubenice", "Najbolje lubenice u gradu, a ako ne u gradu, barem u ulici. Ako ne u ulici, onda ništa, barem se trudimo.", 1.80, "Voæe"),
+		("Mariæ kukuruz šeæerac", "Najslaði kukuruz u okrugu. Definitivno, ovo je bez ikakve dvojbe.", 2.00, "Povræe"),
+		("Stojanoviæev med", "Slatki ko bombonèiæ.", 40.00, "Pèelarski proizvod"), ("Jakopec Špice", "Prodajem bundevine sjemenke, peèene, po kili. PS: Doðite studirati informacijske tehnologije na filozofskom fakultetu u Osijeku!", 40.00, "Povræe");
+insert into opg_pr(opg, proizvod, kolicina) values (1, 1, 20),
+	(1, 2, 700), (2, 3, 1000), (3, 4, 500);
+insert into galerija(proizvod, naslovna) values (1, "1_lubenica.jpg"), (2, "1_kukuruz.jpg"), (3, "2_med.jpg"), (4, "3_spica.jpg");
