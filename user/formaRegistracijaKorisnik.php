@@ -46,7 +46,7 @@ endif;
 	include_once '../navigacija.php'; 
 	 ?>
 <div class="row">
-<h1 class="login">REGISTRIRAJ SE KAO KORISNIK</h1>
+<h1 class="naslov">REGISTRIRAJ SE KAO KORISNIK</h1>
 </div>
 <div class="row">
 

@@ -17,7 +17,11 @@
     <!-- Left nav -->
     <ul class="nav navbar-nav">
      
-      <li class="navbar-text"><a href="<?php echo $put ?>index.php"><button class="btn2 btn-default">Početna</button></a></li>
+      <li class="navbar-text"><a href="<?php echo $put ?>index.php"><button class="btn2 btn-default"><img src="<?php echo $put ?>slike/malilogo.png" style="max-height:20px;" />
+
+      </button></a></li>
+
+       <li class="navbar-text"><a href="<?php echo $put ?>proizvodi/index.php"><button class="btn2 btn-default">Proizvodi</button></a></li>
    
     </ul>
 
@@ -30,7 +34,7 @@
 	<?php else:?>
 	<?php if($_SESSION["operater"]->ime):?>
 		<li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
-		<li class="navbar-text"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Košarica</button></li>
+		<li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#myModal">Košarica</button></li>
      <?php endif;?>
 	 <?php if($_SESSION["operater"]->naziv):?>
 		<li class="navbar-text"><a href="<?php echo $put ?>user/opg.php"> <button class="btn2 btn-default">Profil</button></a></li>

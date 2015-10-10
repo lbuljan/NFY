@@ -44,7 +44,7 @@ endif;
 	 ?>
 
 <div class="row">
-<h1 class="login">REGISTRIRAJ SE KAO OPG</h1>
+<h1 class="naslov">REGISTRIRAJ SE KAO OPG</h1>
 </div>
 <div class="row">
 

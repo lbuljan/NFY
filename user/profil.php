@@ -26,10 +26,21 @@
 
 <div class="row profil">
 
-	<div class="col-md-3 col-md-push-1">
-		<?php echo $korisnik->ime . " " . $korisnik->prezime;?>
+	<div class="col-md-6 col-md-push-1">
+	<h1>
+		<?php echo $korisnik->ime . " " . $korisnik->prezime;?><hr /></h1>
+		<p class="adresa">
+			<img src="<?php echo $put; ?>slike/lokacija.png"><?php echo $korisnik->adresa;?> <br />
+		</p>
+		<div class="lijevo"><?php echo $korisnik->grad;?><br />
+		<?php echo $korisnik->post_broj;?> <br />
+		</div>
+			<p class="adresa" style="margin-top:10px;">
+				<img src="<?php echo $put; ?>slike/email.png"><?php echo $korisnik->email;?>
+			</p>
+		
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-4">
 	<?php if($korisnik->profilna):?>
 		<img class="prf" src="<?php echo $put;?>slike/korisnik/<?php echo $korisnik->profilna;?>" />
 	<?php else:?>
@@ -39,21 +50,13 @@
 
 </div>
 
-<div class="row">
-	<div class="col-md-3 col-md-push-1">
-	<?php echo $korisnik->adresa;?> <br />
-	<?php echo $korisnik->grad;?><br />
-	<?php echo $korisnik->post_broj;?> <br />
-	<?php echo $korisnik->email;?>
-	</div>
-</div>
 
 <div class="row">
-	<div class="col-xs-12">
-		<h1> Kupljeni proizvodi </h1>
-		<hr/>
+	<div class="col-md-10 col-md-push-1">
+	<h1>Kupljeni proizvodi</h1>
+	<hr style="border-color:black;" />
 	</div>
-	<div class="col-xs-12 col-md-4">
+	<div class="col-md-10 col-md-push-1">
 		<?php foreach($history as $hs):
 		
 		$slike = $con->prepare("select naslovna from galerija where proizvod=:p");

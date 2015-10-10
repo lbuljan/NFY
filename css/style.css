@@ -1,7 +1,7 @@
 body {
   font-family: 'Slabo 27px', serif;
   overflow-x:hidden; 
-  padding-top: 30px;
+  padding-top: 150px;
   padding-bottom: 10px;
 }
 
@@ -585,7 +585,7 @@ padding: 20px;
 
 
 .profil {
-  margin-top: 70px;
+  margin-top: 170px;
 }
 
 .profil hr {
@@ -674,3 +674,29 @@ padding: 20px;
    margin-top: 20px;
    color:black;
 }
+
+.prf {
+  width:200px;
+  height:200px;
+  tranzition:height 0,2s, width:0,2s;
+  -webkit-border-top-left-radius: 1px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 4px;
+
+  -moz-border-radius-topleft: 1px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 4px;
+
+  border-top-left-radius: 1px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 4px;
+}
+
+.prf:hover {
+  width:210px;
+  height:210px;
+  tranzition:height 0,2s, width:0,2s;
+} 

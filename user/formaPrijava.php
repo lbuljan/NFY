@@ -11,7 +11,7 @@
 	 ?>
 
 <div class="row">
-<h1 class="login">PRIJAVA</h1>
+<h1 class="naslov">PRIJAVA</h1>
 </div>
 <div class="row">
 

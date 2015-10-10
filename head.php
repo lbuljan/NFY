@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="<?php echo $put ?>js/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap-image-gallery.js"></script>
 	<script type="text/javascript" src="<?php echo $put ?>js/bootstrap-image-gallery.min.js"></script>
+	<link rel="ICON" href="<?php echo $put ?>slike/icon.ico" type="image/ico" />
 
 
 	<meta name="description" content="" />
