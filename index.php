@@ -35,7 +35,7 @@
 				<a href="<?php echo $put;?>proizvod/proizvod.php?p=<?php echo $prod->sifra;?>">
 				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?>">
 				</a>
-					<p><?php echo $prod->naziv;?> <small> <?php echo $prod->cijena;?>kn / kom </small></p>
+					<p><?php echo $prod->naziv;?> <small style="float:right;"> <?php echo $prod->kategorija;?></small></p>
 				
 			</div>
 		<?php endforeach;?>
