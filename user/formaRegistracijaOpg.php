@@ -22,10 +22,8 @@ if($_POST):
 			$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
 			$registriraj->bindParam(":paypal", $_POST["paypal"]);
 			$registriraj->execute();
-			
-			$id=$con->lastInsertId();
 
-				header("location: profil.php?o=$id");
+				header("location: formaPrijava.php");
 		else:
 			header("location: formaRegistracijaOpg.php?err=1");
 		endif;

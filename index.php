@@ -5,7 +5,7 @@
 	$products->execute();
 	$proizvodi = $products->fetchAll(PDO::FETCH_OBJ);
 	
-	$opg = $con->prepare("select * from opg inner join opg_pr on opg_pr.opg = opg.sifra order by RAND() limit 6; ");
+	$opg = $con->prepare("select * from opg order by RAND() limit 6; ");
 	$opg->execute();
 	$maker = $opg->fetchAll(PDO::FETCH_OBJ);
 
@@ -58,11 +58,13 @@
   <h1>Proizvođači</h1>
   <?php foreach($maker as $mk):?>
   <div class="col-md-4 ">
+	<a href="user/profil.php?o=<?php echo $mk->sifra;?>">
 	  <?php if($mk->profilna):?>
 			<img class="opg_slika" src="slike/opg/<?php echo $mk->profilna;?>" />
 		<?php else:?>
 			<img class="opg_slika" src="slike/opg/placeholder.png" alt="Placeholder <?php echo $mk->naziv;?>"/>
 	  <?php endif;?>
+	</a>
     <h2><span><?php echo $mk->naziv;?></span></h2>
   </div>
   <?php endforeach;?>
