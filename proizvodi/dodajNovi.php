@@ -47,11 +47,12 @@ endif;
 	 ?>
 
 <div class="row">
-	<h1 class="login">DODAJ PROIZVOD</h1>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<h1 class="naslov">DODAJ PROIZVOD</h1>
+	</div>
 </div>
 <div class="row">
-
-<div class="col-md-9 col-md-push-2 korisnik" >
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 
 <div class="prijava">
 <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" enctype="multipart/form-data">
@@ -62,7 +63,7 @@ endif;
 	<p>Cijena</p>
 	<input class="log" type="text" id="cijena" name="cijena" placeholder="Cijena" />
 	<p>Kategorija</p>
-	<select id="kategorija" name="kategorija">
+	<select class="log" id="kategorija" name="kategorija">
 		<option value="Mliječni proizvodi"> Mliječni proizvodi </option>
 		<option value="Alkoholna pića"> Alkoholna pića </option>
 		<option value="Bezalkoholni napitci"> Bezalkoholni napitci </option>
@@ -74,7 +75,7 @@ endif;
 		<option value="Prirodna kozmetika"> Prirodna kozmetika </option>
 	</select>
 	<p> Naslovna slika proizvoda </p>
-	<input class="log" type="file" id="photo" name="photo" class="btn btn-primary"/>
+	<input class="log" type="file" id="photo" name="photo" class="btn btn-default"/>
 	<?php if($_GET["err"] && $_GET["err"]==1):?>
 		<p> Slika mora biti ispod 2MB veličine </p>
 	<?php endif;?>

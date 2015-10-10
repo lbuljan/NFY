@@ -2,36 +2,29 @@
 	.korisnik {
   margin-left:150px;
 }
-
-.opg_slika {
-  margin-left:-80px;
-
+.pro {
+  margin-right:-120px;
 }
-	
+
 	
 }
 
-@media screen and (min-width: 800px) and (max-width: 1000px) {
-	.korisnik {
-  margin-left:180px;
+
+
+
+@media screen and (max-width: 900px) {
+.pro {
+  margin-right:-100px;
 }
-
-.opg_slika {
-  margin-left:-270px;
-
-}
-
 
 }
 
-@media screen and (max-width: 770px) {
+
+@media screen and (max-width: 768px) {
 	.korisnik {
   margin-left:100px;
 }
-.opg_slika {
-  margin-left:-150px;
 
-}
 
 }
 
@@ -40,10 +33,7 @@
   margin-left:0px;
 }
 
-.opg_slika {
-  margin-left:-250px;
 
-}
 }
 
 @media screen and (max-width: 480px) {

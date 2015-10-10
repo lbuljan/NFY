@@ -21,7 +21,7 @@
 	</div>
 
 	
-		 <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4 proizvodi">
+		 <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4">
 	<a href="">
 	  
 			<img class="proizvodi_slika" src="<?php echo $put ?>slike/opg/placeholder.png" />

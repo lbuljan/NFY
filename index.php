@@ -27,7 +27,7 @@
 <div class="row slider">
 
 
-	<div class="col-lg-7 col-lg-push-3 col-md-7 col-md-push-3 col-sm-9 col-sm-push-2 col-xs-12 col-xs-push-1">
+	<div class="col-lg-7 col-lg-offset-3 col-md-7 col-md-offset-3 col-sm-9 col-sm-offset-2 col-xs-10 col-xs-offset-2">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 		  <div class="carousel-inner" role="listbox">
@@ -58,15 +58,15 @@
 <div class="row">
   <h1 style="text-align:center;">Proizvođači</h1><br />
   <?php foreach($maker as $mk):?>
-  <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4 proizvodi">
-	<a href="user/profil.php?o=<?php echo $mk->sifra;?>">
+ <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-2 pro">
+	<a href="user/profil.php?o=<?php echo $mk->sifra;?>" class="proizvodi">
 	  <?php if($mk->profilna):?>
 			<img class="opg_slika" src="slike/opg/<?php echo $mk->profilna;?>" />
 		<?php else:?>
 			<img class="opg_slika" src="slike/opg/placeholder.png" alt="Placeholder <?php echo $mk->naziv;?>"/>
 	  <?php endif;?>
-	</a>
-    <h2><span><?php echo $mk->naziv;?></span></h2>
+	
+    <h2><span><?php echo $mk->naziv;?></span></h2></a>
   </div>
   <?php endforeach;?>
 </div>

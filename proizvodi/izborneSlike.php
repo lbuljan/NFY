@@ -8,13 +8,13 @@ if($_POST):
 		if($br<=$limit-1):
 			//echo $_FILES["slika"]["name"][$br];
 			$valid=true;
-			$file_name=$_SESSION["operater"]->sifra . "_" . substr($_FILES[$key]["name"][$br], -8);
-			if($_FILES[$key]["size"][$br] > (3096000)):
+			$file_name=$_SESSION["operater"]->sifra . "_" . substr($_FILES["slika"]["name"][$br], -8);
+			if($_FILES["slika"]["size"][$br] > (3096000)):
 				$valid=false;
 				header("location: izborneSlike.php?err=1");
 			endif;
 				if($valid):
-					move_uploaded_file($_FILES[$key]["tmp_name"][$br], $dir . $file_name);
+					move_uploaded_file($_FILES["slika"]["tmp_name"][$br], $dir . $file_name);
 				endif;
 			$update = $con->prepare("update galerija set slika" . $br ."=" . $file_name ." where proizvod=:p;");
 			$update->bindParam(":p", $_GET["p"]);

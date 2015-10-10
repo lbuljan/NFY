@@ -5,6 +5,10 @@ body {
   padding-bottom: 10px;
 }
 
+option {
+  font-family: 'Slabo 27px', serif;
+}
+
 .navbar {
 	background-color: #4c3c15;
 }
@@ -170,6 +174,10 @@ padding: 20px;
   float: center;
 }
 
+.prijava p {
+  font-size: 20px;
+}
+
 .login {
   margin-top:130px;
   font-size:30px;
@@ -195,7 +203,7 @@ padding: 20px;
 .log1 {
   border: none;
   margin: 10px;
-  width: 400px;
+  width: 90%;
   height: 100px;
   padding-left: 10px;
   font-size: 18px;
@@ -528,23 +536,20 @@ padding: 20px;
 }
 
 
-.proizvodi h2 { 
-   position: absolute; 
-   top: 200px; 
-   left: 0; 
-   max-width: 300px; 
-   margin-top:-40px;
-   margin-left:75px;
-}
 
 .proizvodi h2 span { 
+     position: absolute; 
+     top:40px;
+   left: 0; 
+   width:50%; 
+   margin-top:-40px;
+   margin-left:20px;
    color: black; 
-   font-size:14px; 
-   letter-spacing: -1px;  
+   font-size:18px;  
    background: rgb(239, 239, 239); 
    background: rgba(239, 239, 239, 0.7);
    padding: 7px; 
-   max-width:300px;
+
 
 }
 
@@ -576,22 +581,24 @@ padding: 20px;
 .opg_slika {
   height: 80%;
   width: 80%;
-  transition: width 0,2s, height 0,2s;
-  border:10px solid #efefef;
+  transition: width 0.2s, height 0.2s;
+  border:5px solid #efefef;
   margin-bottom:10px;
-  margin-left:-80px;
+ 
 
 }
 
 .opg_slika:hover {
   width:85%;
   height: 85%;
- transition: width 0,2s, height 0,2s
+ transition: width 0.2s, height 0.2s
 }
 
 
 
-
+.pro {
+  margin-right:-170px;
+}
 
 
 .profil hr {
@@ -626,14 +633,14 @@ padding: 20px;
 .proizvodi_slika {
   height: 80%;
   width: 80%;
-  transition: width 0,2s, height 0,2s;
+  transition: width 0.2s, height 0.2s;
   border:10px solid #efefef;  
 }
 
 .proizvodi_slika:hover {
   width:85%;
   height: 85%;
- transition: width 0,2s, height 0,2s
+ transition: width 0.2s, height 0.2s
 }
 
 .komentar {
@@ -684,7 +691,7 @@ padding: 20px;
 .prf {
   width:200px;
   height:200px;
-  tranzition:height 0,2s, width:0,2s;
+  tranzition:height 0.2s, width:0.2s;
   -webkit-border-top-left-radius: 1px;
   -webkit-border-top-right-radius: 2px;
   -webkit-border-bottom-right-radius: 3px;
@@ -704,5 +711,5 @@ padding: 20px;
 .prf:hover {
   width:210px;
   height:210px;
-  tranzition:height 0,2s, width:0,2s;
+  tranzition:height 0.2s, width:0.2s;
 } 
