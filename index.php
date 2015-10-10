@@ -19,8 +19,10 @@
 	<body>
 	<?php include_once 'navigacija.php'; ?>
 
+	<img src="slike/header.png" style="max-width:100%;"/>
+
 <div class="row">
-  <h1>Proizvodi</h1>
+  <h1 class="naslov">Proizvodi</h1>
 </div>
 
 <div class="row slider">
@@ -33,7 +35,7 @@
 		  <?php foreach($proizvodi as $prod):?>
 			<div class="item <?php echo $prod->sifra;?><?php if($prod->sifra==1): echo " active"; endif;?>">
 				<a href="<?php echo $put;?>proizvod/proizvod.php?p=<?php echo $prod->sifra;?>">
-				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?> class="img-responsive"">
+				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?>" class="img-responsive">
 				</a>
 					<p><?php echo $prod->naziv;?> </p>
 				
@@ -55,7 +57,7 @@
 </div>
 
 <div class="row">
-  <h1>Proizvođači</h1><br />
+  <h1 class="naslov">Proizvođači</h1><br />
   <?php foreach($maker as $mk):?>
   <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4 proizvodi">
 	<a href="user/profil.php?o=<?php echo $mk->sifra;?>">
