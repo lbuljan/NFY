@@ -61,7 +61,7 @@
 	  <?php if($mk->profilna):?>
 			<img class="opg_slika" src="slike/opg/<?php echo $mk->profilna;?>" />
 		<?php else:?>
-			<img class="opg_slika" src="slike/opg/placeholder.jpg" alt="Placeholder <?php echo $mk->naziv;?>"/>
+			<img class="opg_slika" src="slike/opg/placeholder.png" alt="Placeholder <?php echo $mk->naziv;?>"/>
 	  <?php endif;?>
     <h2><span><?php echo $mk->naziv;?></span></h2>
   </div>
