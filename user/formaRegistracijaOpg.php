@@ -1,20 +1,37 @@
 <?php 	include_once '../konfiguracija.php';  ?>
 <?php
 if($_POST):
-	$registriraj = $con->prepare("insert into opg(naziv, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:naziv, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
-	$registriraj->bindParam(":email", $_POST["email"]);
-	$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
-	$registriraj->bindParam(":naziv", $_POST["naziv"]);
-	$registriraj->bindParam(":adresa", $_POST["adresa"]);
-	$registriraj->bindParam(":grad", $_POST["grad"]);
-	$registriraj->bindParam(":postanskibroj", $_POST["postanskibroj"]);
-	$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
-	$registriraj->bindParam(":paypal", $_POST["paypal"]);
-	$registriraj->execute();
-	
-	$id=$con->lastInsertId();
+	$provjeri = $con->prepare("select * from opg where email=:email or naziv=:naziv;");
+	$provjeri->bindParam(":email", $_POST["email"]);
+	$provjeri->bindParam(":naziv", $_POST["naziv"]);
+	$provjeri->execute();
+	$check = $provjeri->fetchAll(PDO::FETCH_OBJ);
+	if($check==NULL):
+		$provjeri = $con->prepare("select * from korisnik where email=:email");
+		$provjeri->bindParam(":email", $_POST["email"]);
+		$provjeri->execute();
+		$check2 = $provjeri->fetchAll(PDO::FETCH_OBJ);
+		if($check2==NULL):
+			$registriraj = $con->prepare("insert into opg(naziv, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:naziv, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
+			$registriraj->bindParam(":email", $_POST["email"]);
+			$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
+			$registriraj->bindParam(":naziv", $_POST["naziv"]);
+			$registriraj->bindParam(":adresa", $_POST["adresa"]);
+			$registriraj->bindParam(":grad", $_POST["grad"]);
+			$registriraj->bindParam(":postanskibroj", $_POST["postanskibroj"]);
+			$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
+			$registriraj->bindParam(":paypal", $_POST["paypal"]);
+			$registriraj->execute();
+			
+			$id=$con->lastInsertId();
 
-		header("location: profil.php?o=$id");
+				header("location: profil.php?o=$id");
+		else:
+			header("location: formaRegistracijaOpg.php?err=1");
+		endif;
+	else:
+		header("location: formaRegistracijaOpg.php?err=1");
+	endif;
 endif;
 ?>
 <!doctype html>

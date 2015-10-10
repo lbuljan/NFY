@@ -3,22 +3,36 @@
 <?php
 
 if($_POST):
-	print_r($_POST);
-	$registriraj = $con->prepare("insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:ime, :prezime, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
-	$registriraj->bindParam(":email", $_POST["email"]);
-	$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
-	$registriraj->bindParam(":ime", $_POST["ime"]);
-	$registriraj->bindParam(":prezime", $_POST["prezime"]);
-	$registriraj->bindParam(":adresa", $_POST["adresa"]);
-	$registriraj->bindParam(":grad", $_POST["grad"]);
-	$registriraj->bindParam(":postanskibroj", $_POST["postanskibroj"]);
-	$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
-	$registriraj->bindParam(":paypal", $_POST["paypal"]);
-	$registriraj->execute();
-	
-	$id=$con->lastInsertId();
-
-		//header("location: profil.php?u=$id");
+	$provjeri = $con->prepare("select * from korisnik where email=:email;");
+	$provjeri->bindParam(":email", $_POST["email"]);
+	$provjeri->execute();
+	$check = $provjeri->fetchAll(PDO::FETCH_OBJ);
+	if($check==NULL):
+		$provjeri = $con->prepare("select * from opg where email=:email");
+		$provjeri->bindParam(":email", $_POST["email"]);
+		$provjeri->execute();
+		$check2 = $provjeri->fetchAll(PDO::FETCH_OBJ);
+		if($check2==NULL):
+			$registriraj = $con->prepare("insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:ime, :prezime, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
+			$registriraj->bindParam(":email", $_POST["email"]);
+			$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
+			$registriraj->bindParam(":ime", $_POST["ime"]);
+			$registriraj->bindParam(":prezime", $_POST["prezime"]);
+			$registriraj->bindParam(":adresa", $_POST["adresa"]);
+			$registriraj->bindParam(":grad", $_POST["grad"]);
+			$registriraj->bindParam(":postanskibroj", $_POST["postanskibroj"]);
+			$registriraj->bindParam(":ziro", $_POST["ziro_racun"]);
+			$registriraj->bindParam(":paypal", $_POST["paypal"]);
+			$registriraj->execute();
+			
+			$id=$con->lastInsertId();
+				header("location: profil.php?u=$id");
+		else:
+			header("location: formaRegistracijaKorisnik.php?err=1");
+		endif;
+	else:
+		header("location: formaRegistracijaKorisnik.php?err=1");
+	endif;
 endif;
 ?>
 
