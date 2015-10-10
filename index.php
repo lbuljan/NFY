@@ -1,4 +1,11 @@
 <?php include_once 'konfiguracija.php';  ?>
+<?php
+	
+	$products = $con->prepare("select * from proizvod inner join galerija on galerija.proizvod=proizvod.sifra order by RAND() limit 5;");
+	$products->execute();
+	$proizvodi = $products->fetchAll(PDO::FETCH_OBJ);
+
+?>
 <!doctype html>
 <html>
 	<head>
@@ -19,25 +26,15 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="slike/Untitled-5.jpg" alt="Chania">
-      
-        <p>OPG Martinović, Virovitica</p>
-    </div>
-
+  <?php foreach($proizvodi as $pr):?>
     <div class="item">
-      <img src="slike/Untitled-5.jpg" alt="Chania">
+      <img src="<?php echo $put;?>slike/proizvodi/<?php echo $pr->naslovna;?>" alt="<?php echo $pr->naziv;?>">
       
-        <p>OPG Martinović, Virovitica</p>
+        <p><?php echo $pr->naziv;?></p>
+		<p><?php echo $pr->cijena;?></p>
+		<p><?php echo $pr->kolicina;?></p>
     </div>
-
-    <div class="item">
-      <img src="slike/Untitled-5.jpg" alt="Chania">
-
-        <p>OPG Martinović, Virovitica</p>
-    </div>
-
-   
+<?php endforeach;?>
   </div>
 
 
