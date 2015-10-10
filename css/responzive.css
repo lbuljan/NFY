@@ -1,0 +1,41 @@
+@media screen and (max-width: 1000px) {
+	.korisnik {
+  margin-left:150px;
+}
+	
+	
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+	.korisnik {
+  margin-left:180px;
+}
+
+}
+
+@media screen and (max-width: 800px) {
+	.korisnik {
+  margin-left:100px;
+}
+}
+
+@media screen and (max-width: 640px) {
+	.korisnik {
+  margin-left:0px;
+}
+}
+
+@media screen and (max-width: 480px) {
+.korisnik {
+  margin-left:0px;
+}
+	
+}
+
+@media screen and (max-width: 320px) {
+	.korisnik {
+  margin-left:0px;
+}	
+
+
+}

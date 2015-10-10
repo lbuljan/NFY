@@ -10,7 +10,13 @@
 	include_once '../navigacija.php'; 
 	 ?>
 
-<h1 class="login">LOGIN</h1>
+<div class="row">
+<h1 class="login">PRIJAVA</h1>
+</div>
+<div class="row">
+
+
+<div class="col-lg-9 col-lg-push-2 col-md-9 col-md-push-1 col-sm-7 col-sm-push-1 col-xs-9 col-xs-push-1 korisnik">
 <div class="prijava">
 <form action="<?php echo $put;?>user/prijava.php" method="POST">
 	<input class="log" type="text" id="email" name="email" placeholder="Vaš e-mail" /><br />
@@ -23,6 +29,9 @@
 	
 </form>
 </div>
+</div>
+</div>
+
 
 
 

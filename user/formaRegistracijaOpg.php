@@ -43,8 +43,12 @@ endif;
 	include_once '../navigacija.php'; 
 	 ?>
 
-
+<div class="row">
 <h1 class="login">REGISTRIRAJ SE KAO OPG</h1>
+</div>
+<div class="row">
+
+<div class="col-md-9 col-md-push-2 korisnik">
 <div class="prijava">
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 	<input class="log" type="text" id="naziv" name="naziv" placeholder="Naziv OPG-a*" />
@@ -62,10 +66,20 @@ endif;
 	<p> E-mail je već u upotrebi </p>
 <?php endif;?>
 </div>
-<div class="registriraj">
-Već ste registrirani? <br/>
-<button class="btn1 btn-default" id="prijavi" type="submit" style="margin-top:15px;margin-bottom:20px;"><a href="<?php echo $put ?>user/formaPrijava.php" style="color:#d6d6d5;text-decoration:none;">Prijavi se!</a></button>
 </div>
+</div>
+
+<div class="row">
+	<div class="col-md-2 col-md-push-5 registriraj">
+		<div>
+		Već ste registrirani? <br/>
+		<button class="btn1 btn-default" id="prijavi" type="submit" style="margin-top:15px;margin-bottom:20px;">
+		<a href="<?php echo $put ?>user/formaPrijava.php" style="color:#d6d6d5;text-decoration:none;">Prijavi se!</a>
+		</button>
+		</div>
+	</div>
+</div>
+
 
 <?php include "../js/skripte.php";?>
 

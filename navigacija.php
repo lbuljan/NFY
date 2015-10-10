@@ -17,19 +17,19 @@
     <!-- Left nav -->
     <ul class="nav navbar-nav">
      
-      <li><a href="<?php echo $put ?>index.php">Početna</a></li>
+      <li class="navbar-text"><a href="<?php echo $put ?>index.php"><button class="btn2 btn-default">Početna</button></a></li>
    
     </ul>
 
     <!-- Right nav -->
     <ul class="nav navbar-nav navbar-right">
 	<?php if(!isset($_SESSION["operater"])):?>
-      <li><a href="<?php echo $put ?>user/formaPrijava.php">Prijava</a></li>
-      <li><a href="<?php echo $put ?>user/formaRegistracijaKorisnik.php">Registracija kao korisnik</a></li>
-      <li><a href="<?php echo $put ?>user/formaRegistracijaOpg.php">Registracija kao OPG</a></li>
+     <li class="navbar-text"><a href="<?php echo $put ?>user/formaPrijava.php"><button class="btn2 btn-default"> Prijava</button></a></li>
+      <li class="navbar-text"><a href="<?php echo $put ?>user/formaRegistracijaKorisnik.php"><button class="btn2 btn-default">Registracija kao korisnik</button></a></li>
+     <li class="navbar-text"> <a href="<?php echo $put ?>user/formaRegistracijaOpg.php"><button class="btn2 btn-default">Registracija kao OPG</button></a></li>
 	<?php else:?>
-	  <li><a href="<?php echo $put ?>user/profil.php">Profil</a></li>
-      <li><a href="<?php echo $put ?>odjava.php">Odjava</a></li>
+	 <li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
+      <li class="navbar-text"><a href="<?php echo $put ?>odjava.php"><button class="btn2 btn-default">Odjava</button></a></li>
 	<?php endif;?>
     
     </ul>

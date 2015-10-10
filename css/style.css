@@ -1,14 +1,16 @@
 body {
+  font-family: 'Slabo 27px', serif;
   overflow-x:hidden; 
   padding-bottom: 10px;
 }
 
 .navbar {
-	background-color: #085b5b;
+	background-color: #4c3c15;
 }
 
-a .navbar-text {
-	color: #d6d6d5;
+.navbar-text a {
+	color: white;
+  text-decoration: none;
 }
 
 .nav > li > a {
@@ -23,31 +25,31 @@ a .navbar-text {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #085b5b;
+  background-color: #4c3c15;
 }
 
 .btn-default {
-  color: #d6d6d5;
-  background-color: #085b5b;
-  border-color: #085b5b;
+  color: white;
+  background-color: #4c3c15;
+  border-color: #4c3c15;
 }
 .btn-default:focus,
 .btn-default.focus {
   color: #d6d6d5;
-  background-color: #085b5b;
-  border-color: #085b5b;
+  background-color: #4c3c15;
+  border-color: #4c3c15;
 }
 .btn-default:hover {
   color: #d6d6d5;
-  background-color: #085b5b;
-  border-color: #085b5b;
+  background-color: #4c3c15;
+  border-color: #4c3c15;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #d6d6d5;
-  background-color: #085b5b;
-  border-color: #085b5b;
+  background-color: #4c3c15;
+  border-color: #4c3c15;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
@@ -59,9 +61,10 @@ a .navbar-text {
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
   color: #d6d6d5;
-  background-color: #085b5b;
-  border-color: #085b5b;
+  background-color: #4c3c15;
+  border-color: #4c3c15;
 }
+
 
 .btn {
   display: inline-block;
@@ -156,8 +159,14 @@ padding-bottom: 10px;
 
 .login {
   margin-top:130px;
-  font-size:50px;
-  margin-left:70px;
+  font-size:30px;
+  text-align: left;
+}
+
+.dodaj {
+  margin-top:130px;
+  font-size:30px;
+ 
 }
 
 .log {
@@ -193,6 +202,7 @@ padding-bottom: 10px;
     text-align: center;
     margin-top:20px;
     font-size: 20px;
+    margin-left:-20px;
 }
 
 .btn1 {
@@ -216,6 +226,30 @@ padding-bottom: 10px;
   border: 1px solid transparent;
   border-radius: 0px;
 }
+
+.btn2 {
+  color:white;
+  display: inline-block;
+  padding: 0px 0px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
 
 .naziv {
   max-width: 70%;
@@ -546,4 +580,8 @@ padding-bottom: 10px;
    background: rgba(239, 239, 239, 0.5);
    position:relative;
    padding:10px;
+}
+
+.korisnik {
+  margin-left:180px;
 }

@@ -26,7 +26,7 @@ $supported = $podrzano->fetchAll(PDO::FETCH_OBJ);
 <body>
 	
 	<?php 	
-	include_once '../nav.php'; 
+	include_once '../navigacija.php'; 
 	 ?>
 
 

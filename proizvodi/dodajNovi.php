@@ -11,11 +11,14 @@
 	 ?>
 
 <div class="row">
+	<h1 class="login">DODAJ PROIZVOD</h1>
+</div>
+<div class="row">
 
-<div class="col-md-8 col-md-push-4" >
-<h1 class="login">Dodaj proizvod</h1>
+<div class="col-md-9 col-md-push-2 korisnik" >
+
 <div class="prijava">
-<form action="user/registracija.php" method="POST">
+<form action="" method="POST">
 	<p>Naziv proizvoda*</p>
 	<input class="log" type="text" id="nazivproizvoda" name="nazivproizvoda" placeholder="Naziv proizvoda" />
 	<p>Kratki opis*</p>
