@@ -286,21 +286,6 @@ padding: 20px;
   padding-bottom: 3px;
 }
 
-.ime h1{
-  margin-left: 280px;
-  margin-top: -170px;
-  font-size: 60px;
-   font-family: 'Work Sans', sans-serif;
-   font-weight: 200;
-}
-
-.ime hr {
-  margin-left: 285px;
-  margin-top:-10px;
-  width: 400px;
-  color: black;
-  border-color: black;
-}
 
 .podaci {
   margin-left: 285px;
@@ -528,8 +513,8 @@ padding: 20px;
 }
 
 
-.row h1 {
-  margin-top:100px;
+.naslov {
+  margin-top:30px;
   text-align: center;
 }
 
@@ -597,6 +582,95 @@ padding: 20px;
  transition: width 0,2s, height 0,2s
 }
 
+
+
 .profil {
-  margin-top: 100px;
+  margin-top: 70px;
+}
+
+.profil hr {
+  margin-left:0px;
+  margin-top:3px;
+  width: 400px;
+  color: black;
+  border-color: black;
+
+} 
+
+.adresa {
+  font-size:18px;
+}
+
+.adresa img {
+  margin-right:10px;
+}
+
+.lijevo {
+  margin-left:27px;
+  margin-top:-15px;
+    font-size:18px;
+}
+
+.slikaprofil {
+  height: 40%;
+  width: 40%;
+
+}
+
+.proizvodi_slika {
+  height: 80%;
+  width: 80%;
+  transition: width 0,2s, height 0,2s;
+  border:10px solid #efefef;  
+}
+
+.proizvodi_slika:hover {
+  width:85%;
+  height: 85%;
+ transition: width 0,2s, height 0,2s
+}
+
+.komentar {
+  background-color:#efefef;
+  padding: 10px;
+  margin-top:5px;
+}
+.datum {
+  float:right;
+}
+
+.dodajkomentar {
+  
+  margin: 10px;
+  width: 400px;
+  height: 100px;
+  padding-left: 10px;
+  font-size: 18px;
+
+}
+
+.cijena {
+  font-size: 30px;
+}
+
+#myCarousel {
+  border:10px solid #efefef;
+}
+
+.slikaproizvod {
+  max-width:450px;
+  margin-top:70px;
+}
+
+
+.opis {
+  background-color: #e8e8e7;
+
+  padding-top:20px;
+  padding-bottom:30px;
+  padding-left:20px;
+  padding-right:20px;
+
+   margin-top: 20px;
+   color:black;
 }
