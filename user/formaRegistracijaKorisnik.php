@@ -72,7 +72,7 @@ Već ste registrirani? <br/>
 			alert("Polja označena sa zvjezdicom moraju biti ispunjena");
 			return false;
 		}
-		if(lozinka != potvrdilozinku){
+		if(lozinka != potvrdi){
 			alert("Lozinka se ne podudara s ponovljenom lozinkom");
 			return false;
 		}		

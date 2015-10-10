@@ -62,11 +62,11 @@ Već ste registrirani? <br/>
 		var lozinka=$("#lozinka").val();
 		var potvrdi=$("#ponovolozinka").val();
 		
-		if(!naziv || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
+		/*if(!naziv || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
 			alert("Polja označena sa zvjezdicom moraju biti ispunjena");
 			return false;
-		}
-		if(lozinka != potvrdilozinku){
+		}*/
+		if(lozinka != potvrdi){
 			alert("Lozinka se ne podudara s ponovljenom lozinkom");
 			return false;
 		}		
