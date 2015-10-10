@@ -23,10 +23,14 @@
 
     <!-- Right nav -->
     <ul class="nav navbar-nav navbar-right">
+	<?php if(!isset($_SESSION["operater"])):?>
       <li><a href="<?php echo $put ?>user/formaPrijava.php">Prijava</a></li>
       <li><a href="<?php echo $put ?>user/formaRegistracijaKorisnik.php">Registracija kao korisnik</a></li>
       <li><a href="<?php echo $put ?>user/formaRegistracijaOpg.php">Registracija kao OPG</a></li>
-
+	<?php else:?>
+	  <li><a href="<?php echo $put ?>user/profil.php">Profil</a></li>
+      <li><a href="<?php echo $put ?>odjava.php">Odjava</a></li>
+	<?php endif;?>
     
     </ul>
 
