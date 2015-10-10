@@ -1,13 +1,16 @@
 <?php 	include_once '../konfiguracija.php';  ?>
 <?php
+		$data = $con->prepare("select * from opg inner join opg_pr on opg_pr.opg=opg.sifra where opg.sifra=:o");
+		$data->bindParam(":o", $_GET["o"]);
+		$data->execute();
+		$opg = $data->fetchAll(PDO::FETCH_OBJ);
 
-		$data = $con->prepare("select * from korisnik where sifra=:s");
+
+		$data = $con->prepare("select * from korisnik inner join kor_pr on kor_pr.korisnik=korisnik.sifra where korisnik.sifra=:s");
 		$data->bindParam(":s", $_SESSION["operater"]->sifra);
 		$data->execute();
-		$korisnik = $data->fetch(PDO::FETCH_OBJ);
-		
-		print_r($korisnik);
-
+		$korisnik = $data->fetchAll(PDO::FETCH_OBJ);
+	endif;
 ?>
 
 <!doctype html>
@@ -23,22 +26,21 @@
 
 
 <div class="row profil">
-
+<?php foreach($)
 	<div class="col-md-3 col-md-push-1">
-
+	Naziv OPG-a
 	</div>
 	<div class="col-md-3">
 	<img src="../slike/Untitled-5.jpg" />
 	</div>
-
 </div>
 
 <div class="row">
 	<div class="col-md-3 col-md-push-1">
-	<?php echo $korisnik->adresa;?> <br />
-	<?php echo $korisnik->grad;?><br />
-	<?php echo $korisnik->post_broj;?> <br />
-	<?php echo $korisnik->email;?>
+	Adresa <br />
+	Grad <br />
+	Poštanski broj <br />
+	E-Mail
 	</div>
 </div>
 
