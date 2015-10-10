@@ -7,6 +7,7 @@ alter database character set utf8 collate utf8_general_ci;
 
 create table korisnik (
 	sifra int not null primary key auto_increment,
+	nickname varchar(20) not null,
 	ime varchar(20) not null,
 	prezime varchar(20) not null,
 	adresa varchar(50) not null,
@@ -43,7 +44,8 @@ create table proizvod (
 
 create table komentar (
 	korisnik int not null,
-	proizvod int not null,
+	proizvod int,
+	opg int,
 	komentar text not null,
 	vrijeme datetime not null
 );
@@ -51,7 +53,8 @@ create table komentar (
 create table opg_pr(
 	opg int not null,
 	proizvod int not null,
-	kolicina int not null
+	kolicina int not null,
+	potvrdi boolean
 );
 
 create table opg (
@@ -70,11 +73,11 @@ create table opg (
 create table galerija (
 	proizvod int not null,
 	naslovna varchar(100) not null,
+	slika0 varchar(100),
 	slika1 varchar(100),
 	slika2 varchar(100),
 	slika3 varchar(100),
-	slika4 varchar(100),
-	slika5 varchar(100)	
+	slika4 varchar(100)	
 );
 
 alter table opg_pr add foreign key (opg) references opg(sifra);
@@ -86,6 +89,7 @@ alter table ocjena add foreign key (korisnik) references korisnik(sifra);
 alter table ocjena add foreign key (proizvod) references proizvod(sifra);
 alter table komentar add foreign key (korisnik) references korisnik(sifra);
 alter table komentar add foreign key (proizvod) references proizvod(sifra);
+alter table komentar add foreign key (opg) references opg(sifra);
 
 
 insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, administrator) values ("Luka", "Buljan", "A. Waldingera 5A", "Osijek", 31000, "admin@admin.os", md5("!admin@"), 1);
