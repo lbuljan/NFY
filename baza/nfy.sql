@@ -90,12 +90,12 @@ alter table komentar add foreign key (proizvod) references proizvod(sifra);
 
 insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, administrator) values ("Luka", "Buljan", "A. Waldingera 5A", "Osijek", 31000, "admin@admin.os", md5("!admin@"), 1);
 
-insert into opg(naziv, adresa, grad, post_broj, email, lozinka) values ("OPG Mariæ", "Vatroslava Doneganija 13", "Ğakovo", 31400, "maric@opg.hr", md5("nemirna")),
-	("OPG Stojanoviæ", "Glavna ulica 41", "Branjin vrh", 31301, "dajana@opg.hr", md5("dstoja")), ("OPG Jakopec", "Lorenza Jaegera 9", "Osijek", 31000, "jakopec@opg.hr", md5("akope"));
+insert into opg(naziv, adresa, grad, post_broj, email, lozinka) values ("OPG MariÄ‡", "Vatroslava Doneganija 13", "Äakovo", 31400, "maric@opg.hr", md5("nemirna")),
+	("OPG StojanoviÄ‡", "Glavna ulica 41", "Branjin vrh", 31301, "dajana@opg.hr", md5("dstoja")), ("OPG Jakopec", "Lorenza Jaegera 9", "Osijek", 31000, "jakopec@opg.hr", md5("Å¾akope"));
 	
-insert into proizvod(naziv, k_opis, cijena, kategorija) values ("Mariæ lubenice", "Najbolje lubenice u gradu, a ako ne u gradu, barem u ulici. Ako ne u ulici, onda ništa, barem se trudimo.", 1.80, "Voæe"),
-		("Mariæ kukuruz šeæerac", "Najslaği kukuruz u okrugu. Definitivno, ovo je bez ikakve dvojbe.", 2.00, "Povræe"),
-		("Stojanoviæev med", "Slatki ko bombonèiæ.", 40.00, "Pèelarski proizvod"), ("Jakopec Špice", "Prodajem bundevine sjemenke, peèene, po kili. PS: Doğite studirati informacijske tehnologije na filozofskom fakultetu u Osijeku!", 40.00, "Povræe");
+insert into proizvod(naziv, k_opis, cijena, kategorija) values ("MariÄ‡ lubenice", "Najbolje lubenice u gradu, a ako ne u gradu, barem u ulici. Ako ne u ulici, onda niÅ¡ta, barem se trudimo.", 1.80, "VoÄ‡e"),
+		("MariÄ‡ kukuruz Å¡eÄ‡erac", "NajslaÄ‘i kukuruz u okrugu. Definitivno, ovo je bez ikakve dvojbe.", 2.00, "PovrÄ‡e"),
+		("StojanoviÄ‡ev med", "Slatki ko bombonÄiÄ‡.", 40.00, "PÄelarski proizvod"), ("Jakopec Å pice", "Prodajem bundevine sjemenke, peÄene, po kili. PS: DoÄ‘ite studirati informacijske tehnologije na filozofskom fakultetu u Osijeku!", 40.00, "PovrÄ‡e");
 insert into opg_pr(opg, proizvod, kolicina) values (1, 1, 20),
 	(1, 2, 700), (2, 3, 1000), (3, 4, 500);
 insert into galerija(proizvod, naslovna) values (1, "1_lubenica.jpg"), (2, "1_kukuruz.jpg"), (3, "2_med.jpg"), (4, "3_spica.jpg");
