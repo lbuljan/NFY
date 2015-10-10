@@ -648,3 +648,29 @@ padding: 20px;
   font-size: 18px;
 
 }
+
+.cijena {
+  font-size: 30px;
+}
+
+#myCarousel {
+  border:10px solid #efefef;
+}
+
+.slikaproizvod {
+  max-width:450px;
+  margin-top:70px;
+}
+
+
+.opis {
+  background-color: #e8e8e7;
+
+  padding-top:20px;
+  padding-bottom:30px;
+  padding-left:20px;
+  padding-right:20px;
+
+   margin-top: 20px;
+   color:black;
+}
