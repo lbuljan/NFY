@@ -60,6 +60,9 @@ endif;
 	<input class="log" type="text" id="paypal" name="paypal" placeholder="PayPal račun" /><br />
 	<button class="btn1 btn-default" id="prijavi" type="submit" style="margin-top:10px;margin-bottom:20px"> Registriraj se! </button>
 </form>
+<?php if(isset($_GET["err"] && $_GET["err"]==1)):?>
+	<p> E-mail je već u upotrebi </p>
+<?php endif;?>
 </div>
 <div class="registriraj">
 Već ste registrirani? <br/>
