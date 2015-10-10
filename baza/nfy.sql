@@ -10,6 +10,7 @@ create table korisnik (
 	nickname varchar(20) not null,
 	ime varchar(20) not null,
 	prezime varchar(20) not null,
+	profilna varchar(100),
 	adresa varchar(50) not null,
 	grad varchar(20) not null,
 	post_broj int not null,

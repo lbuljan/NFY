@@ -25,10 +25,14 @@
 <div class="row profil">
 
 	<div class="col-md-3 col-md-push-1">
-
+		<?php echo $korisnik->ime . " " . $korisnik->prezime;?>
 	</div>
 	<div class="col-md-3">
-	<img src="../slike/Untitled-5.jpg" />
+	<?php if($korisnik->profilna):?>
+		<img class="prf" src="<?php echo $put;?>slike/korisnik/<?php echo $korisnik->profilna;?>" />
+	<?php else:?>
+		<img class="prf" src="<?php echo $put;?>slike/korisnik/placeholder.png"/>
+	<?php endif;?>
 	</div>
 
 </div>
@@ -39,6 +43,15 @@
 	<?php echo $korisnik->grad;?><br />
 	<?php echo $korisnik->post_broj;?> <br />
 	<?php echo $korisnik->email;?>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1> Kupljeni proizvodi </h1>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<!-- FOREACH ZA KOR_PR -->
 	</div>
 </div>
 
