@@ -10,7 +10,6 @@
 		$data->bindParam(":s", $_SESSION["operater"]->sifra);
 		$data->execute();
 		$korisnik = $data->fetchAll(PDO::FETCH_OBJ);
-	endif;
 ?>
 
 <!doctype html>
@@ -26,7 +25,6 @@
 
 
 <div class="row profil">
-<?php foreach($)
 	<div class="col-md-3 col-md-push-1">
 	Naziv OPG-a
 	</div>

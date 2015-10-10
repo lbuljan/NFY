@@ -1,6 +1,10 @@
 <?php 	include_once 'konfiguracija.php';  ?>
+<?php
 
-
+$opg = $con->prepare("select * from opg limit 15");
+$opg->execute();
+$opgi = $opg->fetchAll(PDO::FETCH_OBJ);
+?>
 <!doctype html>
 <html>
 <head>
@@ -15,21 +19,24 @@
 
 
 <div class="row" >
-	<div class="col-md-10 col-md-push-1">
+	<div class="col-xs-12">
 		<h1> Obiteljska poljoprivredna gospodarstva </h1>
 		<hr style="border-color:black;" />
 	</div>
-
+	<?php foreach($opgi as $op):?>
 	
-		 <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4">
-	<a href="">
-	  
-			<img class="proizvodi_slika" src="<?php echo $put ?>slike/opg/placeholder.png" />
-	
-	
-	</a>
-    <h2><span>Naziv</span></h2>
-  </div>
+		<div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-10 col-xs-push-4">
+		<a href="<?php echo $put;?>user/profil/opg.php?o=<?php echo $op->sifra;?>">
+		  
+			<?php if($op->profilna):?>
+				<img class="proizvodi_slika" src="<?php echo $put ?>slike/opg/<?php echo $op->profilna;?>" />
+			<?php else:?>
+				<img class="proizvodi_slika" src="<?php echo $put ?>slike/opg/placeholder.png" />
+			<?php endif;?>
+		</a>
+		<h2><span><?php echo $op->naziv;?></span></h2>
+	  </div>
+  <?php endforeach;?>
 </div>
 
 <?php 	
