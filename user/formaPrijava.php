@@ -7,7 +7,7 @@
 <body>
 	
 	<?php 	
-	include_once '../nav.php'; 
+	include_once '../navigacija.php'; 
 	 ?>
 
 <h1 class="login">LOGIN</h1>
@@ -23,15 +23,9 @@
 	
 </form>
 </div>
-<div class="registriraj">
-Niste registrirani? <br/>
-<button class="btn1 btn-default" id="prijavi" type="submit" style="margin-top:15px;margin-bottom:20px;"><a href="<?php echo $put ?>user/formaRegistracija.php" style="color:#d6d6d5;text-decoration:none;">Sign up!</a></button>
-</div>
 
 
-<?php 	
-include_once '../footer.php'; 
-?>
+
 
 
 </body>

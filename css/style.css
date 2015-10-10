@@ -1,28 +1,458 @@
 body {
-    margin-top: 11%;
 
+}
 
-   
-  }
-  footer {
-margin-top: 50px;
- position: absolute;
-  bottom: 0;
-  width: 100%;
-padding:8px;
-  background-color: #fcfe73; 
+.navbar {
+	background-color: #085b5b;
+}
+
+a .navbar-text {
+	color: #d6d6d5;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+ padding: 0;
+ padding-top: 7px;
+ padding-bottom:7px;
+ color:#d6d6d5;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #085b5b;
+}
+
+.btn-default {
+  color: #d6d6d5;
+  background-color: #085b5b;
+  border-color: #085b5b;
+}
+.btn-default:focus,
+.btn-default.focus {
+  color: #d6d6d5;
+  background-color: #085b5b;
+  border-color: #085b5b;
+}
+.btn-default:hover {
+  color: #d6d6d5;
+  background-color: #085b5b;
+  border-color: #085b5b;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #d6d6d5;
+  background-color: #085b5b;
+  border-color: #085b5b;
+}
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  color: #d6d6d5;
+  background-color: #085b5b;
+  border-color: #085b5b;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 35px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+#pokreni {
+	margin-left: 400px;
+	margin-top: -230px;
+}
+
+.navbar-right {
+    float: right !important;
+    margin-right: 15px; }
+
+footer {
+margin-top: 20px;
+padding-bottom: 10px;
+  background-color: #085b5b; 
   color: #d13423;
-  text-align: center
+  padding-bottom:50px;
+   -webkit-box-shadow: inset 0 0 80px 80px rgba(8,9,9,0.2);
+    -moz-box-shadow: inset 0 0 80px 80px rgba(8,9,9,0.2);
+    box-shadow: inset 0 0 80px 80px rgba(8,9,9,0.2);
 
 }
 
-
-.container {
-  width: auto;
-  max-width: 680px;
+.fut {
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 40px;
 
 }
 
-#copyright {
-text-align: center;
+.projekt {
+	text-align: center;
+	font-size: 30px;
 }
+
+.uspj {
+  max-width: 350px;
+  margin-left: 40px;
+  background-color: #e8e8e7;
+}
+
+.uspj p {
+  margin: 20px;
+  font-size: 17px;
+  padding-bottom: 20px;
+  line-height: 30px
+}
+
+.uspj a {
+  color: #e01e25;
+  text-decoration: none;
+}
+
+.uspj1 {
+  max-width: 350px;
+}
+
+.prijava {
+  background-color: #e8e8e7;
+  text-align: center;
+  margin-left: 400px;
+  margin-right:400px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+}
+
+.login {
+  margin-top:130px;
+  font-size:50px;
+  text-align: center;
+}
+
+.log {
+  border: none;
+  margin: 10px;
+  width: 400px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 18px;
+
+}
+
+.registriraj {
+    text-align: center;
+    margin-top:20px;
+    font-size: 20px;
+}
+
+.btn1 {
+  display: inline-block;
+  padding: 3px 25px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+.naziv {
+  max-width: 70%;
+  margin-top: 80px;
+  margin-left: 50px;
+
+}
+
+.zarulja {
+  float: right;
+  max-height: 300px;
+  max-width: 30%;
+  margin-right: 100px;
+  margin-top: 110px;
+  }
+
+.profil {
+  margin-left: 60px;
+  border: 1px solid black;
+  max-width: 170px;
+  margin-top: 30px;
+}
+
+.profil1 {
+  position: absolute;
+   margin-left: 60px;
+   margin-top: -21px;
+  
+   width: 160px;
+}
+
+.profil1 span {
+   background-color: rgba(8,9,9,0.2);
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 35px;
+  padding-bottom: 3px;
+}
+
+.ime h1{
+  margin-left: 280px;
+  margin-top: -170px;
+  font-size: 60px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+}
+
+.ime hr {
+  margin-left: 285px;
+  margin-top:-10px;
+  width: 400px;
+  color: black;
+  border-color: black;
+}
+
+.podaci {
+  margin-left: 285px;
+  margin-top:-10px;
+     font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+   font-size: 15px;
+}
+
+.moneybag {
+  max-height: 30px;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+
+.money{
+  margin-top: -20px;
+  margin-left: 35px;
+}
+
+.promjena {
+  margin-left: 570px;
+}
+
+.projekti {
+  margin-top: 200px;
+}
+
+.pk h1{
+  margin-top: 50px;
+  margin-left: 70px;
+  font-size: 40px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+}
+
+.pk hr {
+  margin-left: 70px;
+  margin-top:-5px;
+  width: 400px;
+  color: black;
+  border-color: black;
+}
+
+.pk1 h1{
+  margin-top:-70px;
+  font-size: 40px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+}
+
+.pk1 hr {
+  margin-left: 0px;
+  margin-top:-5px;
+  width: 400px;
+  color: black;
+  border-color: black;
+}
+
+.pkk {
+    max-width: 250px;
+  margin-left: 55px;
+  background-color: #e8e8e7;
+
+}
+
+.pkk1 {
+  max-width: 250px;
+}
+
+.pkk p {
+  margin: 20px;
+  font-size: 17px;
+  padding-bottom: 20px;
+ 
+}
+
+.pkk h1 {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 35px;
+  padding-bottom: 2px;
+ 
+     font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+}
+
+.pkk2 {
+    max-width: 400px;
+  margin-left: -13px;
+  background-color: #e8e8e7;
+
+
+}
+.pkk2 p {
+  max-width: 400px;
+  margin: 20px;
+  font-size: 17px;
+  padding-bottom: 20px;
+ 
+}
+
+.pkk2 h1 {
+  max-width: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 35px;
+  padding-bottom: 2px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+}
+
+.desno {
+  margin-left: 700px;
+}
+
+.hrprojekt {
+   border-color:black;
+   color:black;
+   max-width:87%;
+   margin-left:70px;
+   margin-top:-10px;
+}
+
+.imeprojekta h1{
+  margin-left: 70px;
+  margin-top:50px;
+  font-size: 55px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+}
+
+.imeprojekta hr {
+  margin-left: 75px;
+  margin-top:-5px;
+  width: 500px;
+  color: black;
+  border-color: black;
+}
+
+.imeprojekta div{
+  margin-left: 400px;
+  font-size: 17px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 200;
+   position: absolute;
+   margin-top: -40px;
+}
+
+.progress {
+  height: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #e8e8e7;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+     margin-left: 75px;
+     margin-top:10px; 
+     width: 500px;     
+}
+
+
+.btn-default1 {
+  color: #e01e25;
+  background-color: #e01e25;
+  border-color: #e01e25;
+}
+.btn-default1:focus,
+.btn-default1.focus {
+  color: #d6d6d5;
+  background-color: #e01e25;
+  border-color: #e01e25;
+}
+.btn-default1:hover {
+  color: #d6d6d5;
+  background-color: #e01e25;
+  border-color: #e01e25;
+}
+.btn-default1:active,
+.btn-default1.active,
+.open > .dropdown-toggle.btn-default1 {
+  color: #d6d6d5;
+  background-color: #e01e25;
+  border-color: #e01e25;
+}
+.btn-default1:active:hover,
+.btn-default1.active:hover,
+.open > .dropdown-toggle.btn-default1:hover,
+.btn-default1:active:focus,
+.btn-default1.active:focus,
+.open > .dropdown-toggle.btn-default1:focus,
+.btn-default1:active.focus,
+.btn-default1.active.focus,
+.open > .dropdown-toggle.btn-default1.focus {
+  color: #d6d6d5;
+  background-color: #e01e25;
+  border-color: #e01e25;
+}
+
+.btnholder {
+  text-align: center;
+}
+
+
+
+

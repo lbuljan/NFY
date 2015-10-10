@@ -1,4 +1,4 @@
-<?php //	include_once 'konfiguracija.php';  ?>
+<?php include_once 'konfiguracija.php';  ?>
 <!doctype html>
 <html>
 	<head>
@@ -7,7 +7,7 @@
 	
 	<body>
 	<?php include_once 'navigacija.php'; ?>
-	<?php include_once 'slider.php'; ?>
+
 
 
 	<!-- Trigger the modal with a button -->
