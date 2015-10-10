@@ -32,7 +32,8 @@ create table kor_pr(
 	proizvod int not null,
 	kolicina int not null,
 	datum date not null,
-	placanje varchar(10) not null
+	placanje varchar(10) not null,
+	potvrdi boolean
 );
 
 create table proizvod (
@@ -54,8 +55,7 @@ create table komentar (
 create table opg_pr(
 	opg int not null,
 	proizvod int not null,
-	kolicina int not null,
-	potvrdi boolean
+	kolicina int not null
 );
 
 create table opg (
