@@ -1,4 +1,26 @@
 <?php 	include_once '../konfiguracija.php';  ?>
+
+<?php
+
+if($_POST):
+	$registriraj = $con->prepare("insert into korisnik(ime, prezime, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:ime, :prezime, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
+	$registriraj->bindParam(":email", $_POST["email"]);
+	$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
+	$registriraj->bindParam(":ime", $_POST["ime"]);
+	$registriraj->bindParam(":prezime", $_POST["prezime"]);
+	$registriraj->bindParam(":adresa", $_POST["adresa"]);
+	$registriraj->bindParam(":grad", $_POST["grad"]);
+	$registriraj->bindParam(":post_broj", $_POST["post_broj"]);
+	$registriraj->bindParam(":ziro", $_POST["ziro"]);
+	$registriraj->bindParam(":paypal", $_POST["paypal"]);
+	$registriraj->execute();
+	
+	$id=$con->lastInsertId();
+	//preusmjeri na korisnikovu stranicu profila
+		header("location: profil.php?u=$id");
+endif;
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -13,7 +35,7 @@
 
 <h1 class="login">REGISTRIRAJ SE KAO KORISNIK</h1>
 <div class="prijava">
-<form action="user/registracija.php" method="POST">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 	<input class="log" type="text" id="ime" name="ime" placeholder="Ime*" />
 	<input class="log" type="text" id="prezime" name="prezime" placeholder="Prezime*" />
 	<input class="log" type="text" id="adresa" name="adresa" placeholder="Adresa*" />
@@ -37,13 +59,16 @@ Već ste registrirani? <br/>
 <script>
 	$("#prijavi").click(function(){
 		
+		var ime = $("#ime").val();
+		var prezime = $("#prezime").val();
+		var adresa =$("#adresa").val();
+		var grad = $("#grad").val();
+		var pbroj = $("#postanskibroj").val();
 		var email=$("#email").val();
-		var accName=$("#accName").val();
 		var lozinka=$("#lozinka").val();
-		var potvrdilozinku=$("#potvrdilozinku").val();
-		var ziro_racun = $("#ziro_racun").val();
+		var potvrdi=$("#ponovolozinka").val();
 		
-		if(email == "" || accName=="" || lozinka=="" || potvrdilozinku==""){
+		if(!ime || !prezime || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
 			alert("Polja označena sa zvjezdicom moraju biti ispunjena");
 			return false;
 		}

@@ -1,4 +1,22 @@
 <?php 	include_once '../konfiguracija.php';  ?>
+<?php
+if($_POST):
+	$registriraj = $con->prepare("insert into opg(naziv, adresa, grad, post_broj, email, lozinka, ziro, paypal) values (:naziv, :adresa, :grad, :postanskibroj, :email, :lozinka, :ziro, :paypal);");
+	$registriraj->bindParam(":email", $_POST["email"]);
+	$registriraj->bindParam(":lozinka", md5($_POST["lozinka"]));
+	$registriraj->bindParam(":naziv", $_POST["naziv"]);
+	$registriraj->bindParam(":adresa", $_POST["adresa"]);
+	$registriraj->bindParam(":grad", $_POST["grad"]);
+	$registriraj->bindParam(":post_broj", $_POST["post_broj"]);
+	$registriraj->bindParam(":ziro", $_POST["ziro"]);
+	$registriraj->bindParam(":paypal", $_POST["paypal"]);
+	$registriraj->execute();
+	
+	$id=$con->lastInsertId();
+	//preusmjeri na korisnikovu stranicu profila
+		header("location: profil.php?o=$id");
+endif;
+?>
 <!doctype html>
 <html>
 <head>
@@ -13,7 +31,7 @@
 
 <h1 class="login">REGISTRIRAJ SE KAO OPG</h1>
 <div class="prijava">
-<form action="user/registracija.php" method="POST">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 	<input class="log" type="text" id="naziv" name="naziv" placeholder="Naziv OPG-a*" />
 	<input class="log" type="text" id="adresa" name="adresa" placeholder="Adresa*" />
 	<input class="log" type="text" id="grad" name="grad" placeholder="Grad*" />
@@ -36,13 +54,15 @@ Već ste registrirani? <br/>
 <script>
 	$("#prijavi").click(function(){
 		
+		var naziv = $("#naziv").val();
+		var adresa =$("#adresa").val();
+		var grad = $("#grad").val();
+		var pbroj = $("#postanskibroj").val();
 		var email=$("#email").val();
-		var accName=$("#accName").val();
 		var lozinka=$("#lozinka").val();
-		var potvrdilozinku=$("#potvrdilozinku").val();
-		var ziro_racun = $("#ziro_racun").val();
+		var potvrdi=$("#ponovolozinka").val();
 		
-		if(email == "" || accName=="" || lozinka=="" || potvrdilozinku==""){
+		if(!naziv || !adresa || !grad || !pbroj || !email || !lozinka || !potvrdi){
 			alert("Polja označena sa zvjezdicom moraju biti ispunjena");
 			return false;
 		}

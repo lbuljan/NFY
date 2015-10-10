@@ -3,13 +3,22 @@ include '../konfiguracija.php';
 
 $_POST['lozinka'] = md5 ($_POST['lozinka']);
 
-$check = $con->prepare("select * from operater where email=:email and lozinka=:lozinka;");
-$check -> execute($_POST);
-$operater = $check -> fetch(PDO::FETCH_OBJ);
+$checkKor = $con->prepare("select * from korisnik where email=:email and lozinka=:lozinka;");
+$checkKor -> execute($_POST);
+$operater = $checkKor -> fetch(PDO::FETCH_OBJ);
 
 if($operater==NULL):
-	header("location: formaPrijava.php?err=1");
+	$checkOpg = $con->prepare("select * from opg where email=:email and lozinka=:lozinka;");
+	$checkOpg->execute($_POST);
+	$operater = $checkOpg->fetch(PDO::FETCH_OBJ);
+	
+	if($operater==NULL):
+		header("location: formaPrijava.php?err=1");
+	else:
+		$_SESSION['operater'] = $operater;
+		header("location: ../index.php");
+	endif;
 else:
-	$_SESSION['autoriziran'] = $operater;
+	$_SESSION['operater'] = $operater;
 	header("location: ../index.php");
 endif;
