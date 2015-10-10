@@ -26,16 +26,16 @@
 <div class="row slider">
 
 
-	<div class="col-md-9 col-md-push-3">
+	<div class="col-lg-7 col-lg-push-3 col-md-7 col-md-push-3 col-sm-9 col-sm-push-2 col-xs-11 col-xs-push-1">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 		  <div class="carousel-inner" role="listbox">
 		  <?php foreach($proizvodi as $prod):?>
 			<div class="item <?php echo $prod->sifra;?><?php if($prod->sifra==1): echo " active"; endif;?>">
 				<a href="<?php echo $put;?>proizvod/proizvod.php?p=<?php echo $prod->sifra;?>">
-				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?>">
+				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?> class="img-responsive"">
 				</a>
-					<p><?php echo $prod->naziv;?> <small style="float:right;"> <?php echo $prod->kategorija;?></small></p>
+					<p><?php echo $prod->naziv;?> </p>
 				
 			</div>
 		<?php endforeach;?>
@@ -55,9 +55,9 @@
 </div>
 
 <div class="row">
-  <h1>Proizvođači</h1>
+  <h1>Proizvođači</h1><br />
   <?php foreach($maker as $mk):?>
-  <div class="col-md-4 ">
+  <div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-xs-12 proizvodi">
 	<a href="user/profil.php?o=<?php echo $mk->sifra;?>">
 	  <?php if($mk->profilna):?>
 			<img class="opg_slika" src="slike/opg/<?php echo $mk->profilna;?>" />
@@ -70,6 +70,6 @@
   <?php endforeach;?>
 </div>
 
-
+<?php include_once 'footer.php'; ?>
 	</body>
 </html>
