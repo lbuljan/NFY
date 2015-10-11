@@ -56,7 +56,7 @@ endif;
 	<?php endif;?>
 	<div class="banner">
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-push-1">
+			<div class="col-lg-8 col-lg-push-4 col-md-10 col-md-push-4 col-sm-10 col-sm-push-3 col-xs-10 col-xs-push-1">
 				<?php if($podaci->profilna):?>
 					<img style="border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;" src="<?php echo $put;?>slike/opg/<?php echo $podaci->profilna;?>" class="img-responsive" />
 				<?php else:?>
@@ -81,30 +81,30 @@ endif;
 	</div>
 	
 	<div class="row">
-		<div class="col-xs-10 col-xs-push-1">
+
 	<?php foreach($proizvodi as $prod):
 		$slike = $con->prepare("select naslovna from galerija where galerija.proizvod=:p");
 		$slike->bindParam(":p", $prod->sifra);
 		$slike->execute();
 		$pic = $slike->fetch(PDO::FETCH_OBJ);
 	?>
-		<div class="col-xs-10 col-xs-push-1 col-md-3 col-md-push-1" style="text-align: center">
-			<div class="row">
+		<div class="col-xs-10 col-xs-push-1 col-md-3 col-md-push-1 col-sm-3 col-sm-push-1" style="text-align: center">
+			
 			<a href="<?php echo $put;?>proizvodi/proizvod.php?p=<?php echo $prod->sifra;?>">
-				<div class="col-xs-10 col-xs-push-1">
+				
 					<img class="proizvodi_slika" src="<?php echo $put;?>slike/proizvodi/<?php echo $pic->naslovna;?>"/>
-				</div>
+				
 			</a>
-			</div>
-			<div class="row">
+			
+		
 				<div class="col-xs-10 col-xs-push-1">
 					<h3> <?php echo $prod->naziv;?> </h3>
-				</div>
+				
 			</div>
 		</div>
 	
 	<?php endforeach;?>
-		</div>
+		
 	</div>
 
 
