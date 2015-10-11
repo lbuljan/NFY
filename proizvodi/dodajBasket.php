@@ -1,10 +1,10 @@
 <?php 	include_once '../konfiguracija.php';  ?>
 <?php 
 	if($_POST):
-		$dodaj = $con->prepare("insert into kor_pr(korisnik, proizvod, kolicina, vrijeme, placanje) values (:u, :p, :k, now(), 'pouzece');");
-		$dodaj->bindParam(":u", $_SESSION["operater"]->sifra);
-		$dodaj->bindParam(":p", $_POST["p"]);
-		$dodaj->bindParam(":k", $_POST["k"]);
-		$dodaj->execute();
+		$insert = $con->prepare("insert into kor_pr(korisnik, proizvod, kolicina, datum, placanje, potvrdi) values (:s, :p, :k, now(), 'Pouzećem', 0)");
+		$insert->bindParam(":s", $_SESSION["operater"]->sifra);
+		$insert->bindParam(":p", $_POST["p"]);
+		$insert->bindParam(":k", $_POST["k"]);
+		$insert->execute();
 			echo "OK";
 	endif;

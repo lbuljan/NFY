@@ -1,7 +1,4 @@
 
-
-<?php   include_once 'head.php';  ?>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,16 +49,7 @@
 
   </div><!--/.nav-collapse -->
 </div>
-
-<?php
-
-		$kupljeno = $con->prepare("select * from proizvod inner join kor_pr on proizvod.sifra=kor_pr.proizvod where kor_pr.korisnik=:s");
-		$kupljeno->bindParam(":s", $_SESSION["operater"]->sifra);
-		$kupljeno->execute();
-		$history = $kupljeno->fetchAll(PDO::FETCH_OBJ);
-		
-		print_r($history);
-?>	
+	
 
 <!-- Trigger the modal with a button -->
 
@@ -76,23 +64,46 @@
         <h4 class="modal-title">Košarica</h4>
       </div>
       <div class="modal-body">
-	  <?php foreach($history as $hs):
+	  <?php 
+		$history = $con->prepare("select * from kor_pr inner join proizvod on kor_pr.proizvod=proizvod.sifra where korisnik=:k and potvrdi=0");
+		$history->bindParam(":k", $_SESSION["operater"]->sifra);
+		$history->execute();
+		$kupljeno = $history->fetchAll(PDO::FETCH_OBJ);
+		
+	  ?>
+	  <?php foreach($kupljeno as $hs):
 		$slike = $con->prepare("select naslovna from galerija where proizvod=:p");
 		$slike->bindParam(":p", $hs->sifra);
 		$slike->execute();
 		$pic = $slike->fetch(PDO::FETCH_OBJ);
 	  ?>
+			<div class="remove_<?php echo $hs->sifra;?>">
 			<div class="col-xs-12">
 				<div class="col-xs-3">
-					<img style="height: 90%; width: 90%;" src="<?php echo $put;?>slike/proizvodi/<?php echo $hs->naslovna;?>" alt="Naslovna proizvoda <?php echo $hs->naziv;?>" />
+					<img style="height: 90%; width: 90%;" src="<?php echo $put;?>slike/proizvodi/<?php echo $pic->naslovna;?>" alt="Naslovna proizvoda <?php echo $hs->naziv;?>" />
 				</div>
-				<div class="col-xs-6">
-					<strong> <?php echo $hs->naziv;?> </strong> <small> <?php echo $hs->kolicina;?> </small>
+				<div class="col-xs-9">
+					<div class="row">
+						<div class="col-xs-12">
+							<strong> <?php echo $hs->naziv;?> </strong> 
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+								<?php $cijena = $hs->cijena * $hs->kolicina;?>
+								<div style="float:left;">
+									<p> Cijena:  </p><h1><?php echo $cijena;?>kn</h1>
+									<p> Količina: <?php echo $hs->kolicina;?> </p>
+								</div>
+								<div style="float:right;">
+									<button type="submit" class="potvrdi" id="kupnja_<?php echo $hs->sifra;?>"> Potvrdi </button>
+									<button type="submit" class="obrisi" id="brisi_<?php echo $hs->sifra;?>"> Ukloni </button>
+								</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-xs-3">
-					<?php $cijena = $hs->cijena * $hs->kolicina;?>
-					<p> <?php echo $cijena;?> </p>
-				</div>
+				<hr/>
+			</div>
 			</div>
 		<?php endforeach;?>
       </div>
@@ -126,3 +137,44 @@
 
   </div>
 </div>
+
+<script>
+	$(".potvrdi").click(function(){
+		var potvrdi = $(this);
+		var proizvod = $(".potvrdi").attr("id").split("_")[1];
+		$.ajax({
+      			type: 'POST',
+      			url: "<?php echo $put;?>potvrdiBasket.php",
+      			data: "p=" + proizvod,
+      			dataType: 'text'
+    			}).done(function(rezultat) {
+    				
+        			if(rezultat=="OK"){
+        				
+        				alert("Proizvod kupljen!");
+   						potvrdi.parent().parent().parent().parent().parent().remove();
+   					}else{
+   						alert(rezultat);
+   					}
+    			}); 
+	});
+	$(".obrisi").click(function(){
+		var potvrdi = $(this);
+		var proizvod = $(".potvrdi").attr("id").split("_")[1];
+		$.ajax({
+      			type: 'POST',
+      			url: "<?php echo $put;?>ukloniBasket.php",
+      			data: "p=" + proizvod,
+      			dataType: 'text'
+    			}).done(function(rezultat) {
+    				
+        			if(rezultat=="OK"){
+        				
+        				alert("Proizvod uklonjen.");
+   						potvrdi.parent().parent().parent().parent().parent().remove();
+   					}else{
+   						alert(rezultat);
+   					}
+    			}); 
+	});
+</script>
