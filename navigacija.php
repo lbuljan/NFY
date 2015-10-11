@@ -22,7 +22,7 @@
       </button></a></li>
 
        <li class="navbar-text"><a href="<?php echo $put ?>proizvodi/index.php"><button class="btn2 btn-default">Proizvodi</button></a></li>
-       <li class="navbar-text"><a href="<?php echo $put ?>opg.php"><button class="btn2 btn-default">OPG</button></a></li>
+       <li class="navbar-text"><a href="<?php echo $put ?>opg_naslovna.php"><button class="btn2 btn-default">OPG</button></a></li>
    
     </ul>
 

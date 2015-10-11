@@ -740,3 +740,11 @@ left:-25px;
 right:-25px;
 }
 
+.broj {
+  max-width: 30px;
+  text-align: center;
+  font-size: 18px;
+  height: 33px;
+  margin-right:7px;
+  margin-top:5px;
+}

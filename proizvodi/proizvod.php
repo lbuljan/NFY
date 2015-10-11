@@ -116,9 +116,10 @@
 </div>
 <div class="row">
 	<?php if(!isset($_SESSION["operater"]->naziv)):?>
-		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
+		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-2">
+		<input type="text" id="kolicina" placeholder="1" class="broj"/>
 			<button class="btn1 btn-default" id="add_basket"> <img src="<?php echo $put;?>slike/kolica.png" alt="Košarica:"/> Dodaj u košaricu</button>
-			<input type="text" id="kolicina" placeholder="1"/>
+			
 		</div>
 		<?php endif;?>
 	
