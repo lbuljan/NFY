@@ -23,32 +23,37 @@
 	include_once '../navigacija.php'; 
 	 ?>
 
-
-<div class="row profil">
-
-	<div class="col-lg-6 col-lg-push-1 col-md-7 col-md-push-1 col-sm-7 col-sm-push-1 col-xs-10 col-xs-push-1">
-	<h1 class="naslov1">
-		<?php echo $korisnik->ime . " " . $korisnik->prezime;?><hr /></h1>
-		<p class="adresa">
-			<img src="<?php echo $put; ?>slike/lokacija.png"><?php echo $korisnik->adresa;?> <br />
-		</p>
-		<div class="lijevo"><?php echo $korisnik->grad;?><br />
-		<?php echo $korisnik->post_broj;?> <br />
+	 <div class="banner">
+		<div class="row">
+			<div class="col-lg-8 col-lg-push-4 col-md-10 col-md-push-4 col-sm-10 col-sm-push-3 col-xs-10 col-xs-push-1">
+				<?php if($korisnik->profilna):?>
+					<img style="border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;" src="<?php echo $put;?>slike/korisnik/<?php echo $korisnik->profilna;?>"  class="img-responsive"/>
+				<?php else:?>
+					<img style="border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;" src="<?php echo $put;?>slike/korisnik/placeholder.png"  class="img-responsive"/>
+				<?php endif;?>
+			</div>
+			<div class="col-xs-12">
+				<h1> <?php echo $korisnik->ime . " " . $korisnik->prezime;?>
+				<a href="<?php echo $put; ?>user/profilPromjena.php" style="font-size:13px;margin-left:10px;color:white;">
+					Uredi
+				</a>
+			</h1>
+			</div>
 		</div>
-			<p class="adresa" style="margin-top:10px;">
-				<img src="<?php echo $put; ?>slike/email.png"><?php echo $korisnik->email;?>
-			</p>
-		
-	</div>
-	<div class="col-lg-5 col-md-5 col-sm-5 col-xs-10 col-xs-push-1">
-	<?php if($korisnik->profilna):?>
-		<img class="prf" src="<?php echo $put;?>slike/korisnik/<?php echo $korisnik->profilna;?>" />
-	<?php else:?>
-		<img class="prf" src="<?php echo $put;?>slike/korisnik/placeholder.png"/>
-	<?php endif;?>
 	</div>
 
-</div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-push-1"  style="text-align: center">
+			<h3> <?php echo $korisnik->adresa . " - " . $korisnik->post_broj . " " . $korisnik->grad ;?><hr style="border-color:black;" /></h3>
+		</div>	
+	</div>
+
+<div class="row">
+		<div class="col-xs-10 col-xs-push-1"  style="text-align: center">
+			<h3> <a href="mailto:<?php echo $podaci->email;?>"> <img src="<?php echo $put;?>slike/email.png"/> <?php echo $korisnik->email;?> </a><hr style="border-color:black;" /></h3>
+		</div>	
+	</div>
+
 
 
 <div class="row">

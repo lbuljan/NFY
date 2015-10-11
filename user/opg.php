@@ -64,7 +64,12 @@ endif;
 				<?php endif;?>
 			</div>
 			<div class="col-xs-12">
-				<h1> <?php echo $podaci->naziv;?></h1>
+				<h1> <?php echo $podaci->naziv;?>
+
+				<a href="<?php echo $put; ?>user/opgPromjena.php" style="font-size:13px;margin-left:10px;color:white;">
+					Uredi
+				</a>
+				</h1>
 			</div>
 		</div>
 	</div>
