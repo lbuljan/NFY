@@ -84,31 +84,34 @@
 				</div>
 				<div class="col-xs-9">
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-12" style="font-size:15px;">
 							<strong> <?php echo $hs->naziv;?> </strong> 
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-12" style="font-size:15px;">
 								<?php $cijena = $hs->cijena * $hs->kolicina;?>
-								<div style="float:left;">
+								<div style="float:left;" style="font-size:15px;">
 									<p> Cijena:  </p><h1><?php echo $cijena;?>kn</h1>
 									<p> Količina: <?php echo $hs->kolicina;?> </p>
 								</div>
-								<div style="float:right;">
-									<button type="submit" class="potvrdi" id="kupnja_<?php echo $hs->sifra;?>"> Potvrdi </button>
-									<button type="submit" class="obrisi" id="brisi_<?php echo $hs->sifra;?>"> Ukloni </button>
+								<div style="float:right;" style="font-size:15px;">
+									<button type="submit" class="btn-default potvrdi" id="kupnja_<?php echo $hs->sifra;?>"> Potvrdi </button>
+									<button type="submit" class="btn-default obrisi" id="brisi_<?php echo $hs->sifra;?>"> Ukloni </button>
 								</div>
 						</div>
 					</div>
 				</div>
-				<hr/>
 			</div>
 			</div>
 		<?php endforeach;?>
       </div>
+      <div class="row">
+      <div class="col-xs-12">
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>
+        </div>
+        </div>
       </div>
     </div>
 

@@ -3,10 +3,7 @@ body {
   overflow-x:hidden; 
   padding-top: 50px;
   padding-bottom: 10px;
-  background-image: url("../slike/tekstura.jpg");
-  background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
+ 
 }
 
 option {
@@ -14,7 +11,9 @@ option {
 }
 
 .navbar {
+  margin-top:-3px;
 	background-color: #4c3c15;
+  padding-right:20px;
 }
 
 .navbar-text a {
@@ -102,9 +101,7 @@ option {
 	margin-top: -230px;
 }
 
-.navbar-right {
-    float: right !important;
-    margin-right: 15px; }
+
 
 footer {
 text-align: center;
@@ -770,7 +767,7 @@ right:-25px;
 }
 
 .navbar-collapse {
-  max-height: auto;
+  max-height: 400px;
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
@@ -781,3 +778,14 @@ right:-25px;
 .navbar-collapse.in {
   overflow-y: hidden;
 }
+
+.navbar-fixed-top .navbar-collapse {
+    max-height: 400px;
+    text-align: center;
+
+}
+
+  .navbar-right {
+
+    text-align: center;
+   }
