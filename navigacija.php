@@ -129,9 +129,59 @@
         <h4 class="modal-title">Pretraga</h4>
       </div>
       <div class="modal-body">
-        <input type="text" class="log2">
-        <br />
-        <button type="button" class="btn btn-default" style="margin-left:10px;">Pretraži</button>
+		<div class="row">
+			<div class="col-xs-10 col-xs-push-1">
+				<form action="#" method="POST">
+					<p> Pretraži OPG-e </p>
+					<div class="row">
+						<div class="col-xs-5 col-xs-push-1">
+							<input style="width: 100%; " type="text" id="opg_upit" name="opg_upit" />
+						</div>
+						<div class="col-xs-5 col-xs-push-1">
+							<select name="opg_modifier" style="width: 100%;height: 26px;">
+								<option value="opg_naziv" selected> Po nazivu </option>
+								<option value="grad"> Po gradu </option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-10 col-xs-push-1" style="text-align: center;">
+						<br/>
+							<button type="button" id="opg_trazi" class="btn btn-default" style="margin-left:10px;">Pretraži</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<hr/>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-10 col-xs-push-1">
+				<form action="#" method="POST">
+					<p> Pretraži proizvode </p>
+					<div class="row">
+						<div class="col-xs-5 col-xs-push-1">
+							<input style="width: 100%; " type="text" id="pro_upit" name="pro_upit" />
+						</div>
+						<div class="col-xs-5 col-xs-push-1">
+							<select name="pro_modifier" style="width: 100%; height: 26px; ">
+								<option value="kategorija" selected> Po kategoriji </option>
+								<option value="opg"> Po OPG-u </option>
+								<option value="pro_naziv"> Po OPG-u </option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-10 col-xs-push-1" style="text-align: center">
+						<br/>
+							<button type="button" id="pro_trazi" class="btn btn-default" style="margin-left:10px;">Pretraži</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<hr/>
+		</div>
+		
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Zatvori</button>

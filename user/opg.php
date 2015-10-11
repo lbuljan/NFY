@@ -81,6 +81,7 @@ endif;
 	</div>
 	
 	<div class="row">
+		<div class="col-xs-10 col-xs-push-1">
 	<?php foreach($proizvodi as $prod):
 		$slike = $con->prepare("select naslovna from galerija where galerija.proizvod=:p");
 		$slike->bindParam(":p", $prod->sifra);
@@ -103,6 +104,7 @@ endif;
 		</div>
 	
 	<?php endforeach;?>
+		</div>
 	</div>
 
 
