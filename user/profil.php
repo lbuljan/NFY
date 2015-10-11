@@ -27,7 +27,7 @@
 <div class="row profil">
 
 	<div class="col-lg-6 col-lg-push-1 col-md-7 col-md-push-1 col-sm-7 col-sm-push-1 col-xs-10 col-xs-push-1">
-	<h1>
+	<h1 class="naslov1">
 		<?php echo $korisnik->ime . " " . $korisnik->prezime;?><hr /></h1>
 		<p class="adresa">
 			<img src="<?php echo $put; ?>slike/lokacija.png"><?php echo $korisnik->adresa;?> <br />

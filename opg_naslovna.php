@@ -27,7 +27,7 @@ $opgi = $opg->fetchAll(PDO::FETCH_OBJ);
 	<?php foreach($opgi as $op):?>
 	
 		<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-2 pro">
-		<a href="<?php echo $put;?>user/profil/opg.php?o=<?php echo $op->sifra;?>" class="proizvodi">
+		<a href="<?php echo $put;?>user/opg.php?o=<?php echo $op->sifra;?>" class="proizvodi">
 		  
 			<?php if($op->profilna):?>
 				<img class="proizvodi_slika" src="<?php echo $put ?>slike/opg/<?php echo $op->profilna;?>" />

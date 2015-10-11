@@ -56,11 +56,11 @@ endif;
 	<?php endif;?>
 	<div class="banner">
 		<div class="row">
-			<div class="col-xs-10 col-xs-push-1">
+			<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-push-1">
 				<?php if($podaci->profilna):?>
-					<img style="border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;" src="<?php echo $put;?>slike/opg/<?php echo $podaci->profilna;?>" />
+					<img style="border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;" src="<?php echo $put;?>slike/opg/<?php echo $podaci->profilna;?>" class="img-responsive" />
 				<?php else:?>
-					<img src="<?php echo $put;?>slike/opg/placeholder.png" />
+					<img src="<?php echo $put;?>slike/opg/placeholder.png" class="img-responsive"/>
 				<?php endif;?>
 			</div>
 			<div class="col-xs-12">
@@ -88,7 +88,7 @@ endif;
 		$slike->execute();
 		$pic = $slike->fetch(PDO::FETCH_OBJ);
 	?>
-		<div class="col-xs-5 col-xs-push-1 col-md-3 col-md-push-1" style="text-align: center">
+		<div class="col-xs-10 col-xs-push-1 col-md-3 col-md-push-1" style="text-align: center">
 			<div class="row">
 			<a href="<?php echo $put;?>proizvodi/proizvod.php?p=<?php echo $prod->sifra;?>">
 				<div class="col-xs-10 col-xs-push-1">

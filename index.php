@@ -34,7 +34,7 @@
 		  <?php foreach($proizvodi as $prod):?>
 			<div class="item <?php echo $prod->sifra;?><?php if($prod->sifra==1): echo " active"; endif;?>">
 				<a href="<?php echo $put;?>proizvodi/proizvod.php?p=<?php echo $prod->sifra;?>">
-				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?> class="img-responsive"">
+				  <img src="<?php echo $put;?>slike/proizvodi/<?php echo $prod->naslovna;?>" alt="<?php echo $prod->naziv;?>" class="img-responsive">
 				</a>
 					<p><?php echo $prod->naziv;?> </p>
 				
@@ -59,7 +59,7 @@
   <h1 style="text-align:center;">Proizvođači</h1><br />
   <?php foreach($maker as $mk):?>
  <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-10 col-xs-offset-2 pro">
-	<a href="user/profil.php?o=<?php echo $mk->sifra;?>" class="proizvodi">
+	<a href="user/opg.php?o=<?php echo $mk->sifra;?>" class="proizvodi">
 	  <?php if($mk->profilna):?>
 			<img class="opg_slika" src="slike/opg/<?php echo $mk->profilna;?>" />
 		<?php else:?>
