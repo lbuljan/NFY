@@ -1,9 +1,16 @@
 <?php 	include_once 'konfiguracija.php';  ?>
 <?php
-
-$opg = $con->prepare("select * from opg limit 15");
-$opg->execute();
-$opgi = $opg->fetchAll(PDO::FETCH_OBJ);
+if(isset($_POST["mod"])):
+	$_POST["u"]="%" . $_POST["u"] . "%";
+	$trazi=$con->prepare("select * from opg where ". $_POST['mod']. " like :u;");
+	$trazi->bindParam(":u", $_POST["u"]);
+	$trazi->execute();
+	$opgi = $trazi->fetchAll(PDO::FETCH_OBJ);
+else:
+	$opg = $con->prepare("select * from opg limit 15");
+	$opg->execute();
+	$opgi = $opg->fetchAll(PDO::FETCH_OBJ);
+endif;
 ?>
 <!doctype html>
 <html>
