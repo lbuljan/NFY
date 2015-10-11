@@ -32,42 +32,39 @@
 	 <input type="hidden" id="proizvod" value="<?php echo $_GET["p"];?>"/>
 
 	<div class="row profil">
-		<div class="col-xs-10 col-md-push-1">
+		<div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-sm-push-1 col-xs-10 col-xs-push-1">
 			<h1> <?php echo $prod->naziv;?> <small style="font-size: 0.5em; margin-left: 5%;"><?php echo $prod->kategorija;?></small> <hr/> <h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-10 col-md-push-1">
-			<div class="col-md-6" style="text-align: center; line-height: 40px;">
+		<div class="col-lg-10 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
+			<div class="col-md-6 col-sm-7" style="text-align: center; line-height: 40px;">
 				<div class="row">
 						<div class="col-xs-12">
-							<img  style="float: left; height: 20px; width: 15px;" src="<?php echo $put;?>slike/cijena.png" alt="Cijena:" />
-							<p style="font-size: 1.5em; float:left;"> <?php echo $prod->cijena;?>kn  kom/kg</p>
+							<img  style="float: left; height: 20px; width: 15px;margin-right:5px" src="<?php echo $put;?>slike/cijena.png" alt="Cijena:" />
+							<p style="font-size: 30px; float:left;margin-top:-10px;"> <?php echo $prod->cijena;?>kn  kom/kg</p>
 						</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-6" style="text-align: left;">
-						<img style="height: 20px; width: 15px;" src="<?php echo $put;?>slike/email.png" alt="E-mail:"/>
-						<a href="mailto:<?php echo $tko->email;?>" style="font-size: 1.5em; color: black; text-decoration: none;"> <?php echo $tko->email;?> </a>
+					<div class="col-md-4 col-sm-4 col-xs-6" style="text-align: left;">
+						<img style="height: 20px; width: 20px;margin-top:-5px" src="<?php echo $put;?>slike/email.png" alt="E-mail:"/>
+						<a href="mailto:<?php echo $tko->email;?>" style="font-size: 1.3em; color: black; text-decoration: none;"> <?php echo $tko->email;?> </a>
 					</div>
-					<div class="col-xs-6" style="text-align: center;">
-						<img style="height: 20px; width: 15px;" src="<?php echo $put;?>slike/user.png" alt="OPG:" />
-						<a href="<?php echo $put;?>user/opg.php?o=<?php echo $tko->sifra;?>" style="font-size: 1.5em; color: black; text-decoration: none;"> <?php echo $tko->naziv;?> </a>
+					<div class="col-md-4 col-sm-4 col-xs-6" style="text-align: center;">
+						<img style="height: 20px; width: 20px;" src="<?php echo $put;?>slike/user.png" alt="OPG:" />
+						<a href="<?php echo $put;?>user/opg.php?o=<?php echo $tko->sifra;?>" style="font-size: 1.3em; color: black; text-decoration: none;"> <?php echo $tko->naziv;?> </a>
 					</div>
 				</div>
 				<br/>
 				<div class="row">
-					<div class="col-xs-6">
-						<img  style="float:left;height: 25px;" src="<?php echo $put;?>slike/lokacija.png" alt="Lokacija:" />
-						<p style="font-size: 1.5em"> <?php echo $tko->adresa;?> </p> 
-					</div>
-					<div class="col-xs-6">
-						<p style="text-align: center; font-size: 1.5em"> <?php echo $tko->grad . ", " . $tko->post_broj;?>  </p>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<img  style="float:left;height: 25px;margin-top:10px;" src="<?php echo $put;?>slike/lokacija.png" alt="Lokacija:" />
+						<p style="font-size: 1.5em;float:left;margin-left:10px;"> <?php echo $tko->adresa;?> <br /> <?php echo $tko->grad . ", " . $tko->post_broj;?>  </p>
 					</div>
 				</div>
 			</div>
 			
-			<div class="col-md-6">
+			<div class="col-md-5 col-sm-4 col-xs-10 col-xs-offset-1">
 
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -116,10 +113,10 @@
 			</div>
 		</div>
 	
-
+</div>
 
 <div class="row">
-	<div class="col-md-10 col-md-push-1">
+	<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 	<h1>Kratki opis</h1>
 	
 	<div class="opis">
@@ -133,7 +130,7 @@
 
 
 <div class="row">
-	<div class="col-md-10 col-md-push-1">
+		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 	<h1>Komentari</h1>
 	<hr style="border-color:black;" />
 	</div>
@@ -209,7 +206,7 @@
 <?php endif;?>
 <?php if($_SESSION["operater"]->ime):?>
 <div class="row">
-	<div class="col-md-10 col-md-push-1">
+		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 		<div class="komentari">
 			<h1  style="margin-top:20px;">Komentiraj</h1>
 			<hr style="border-color:black;" />
