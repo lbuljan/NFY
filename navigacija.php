@@ -14,7 +14,7 @@
     <!-- Left nav -->
     <ul class="nav navbar-nav">
      
-      <li class="navbar-text"><a href="<?php echo $put ?>index.php"><button class="btn2 btn-default"><img src="<?php echo $put ?>slike/malilogo.png" style="max-height:20px;" />
+      <li class="navbar-text"><a href="<?php echo $put ?>index.php"><button class="btn2 btn-default"><img src="<?php echo $put ?>slike/malilogo.png" style="max-height:20px;margin-top:-10px;" />
 
       </button></a></li>
 
