@@ -14,3 +14,4 @@ $con->exec("SET CHARACTER SET utf8");
 $con->exec("SET NAMES utf8");
 
 session_start();
+

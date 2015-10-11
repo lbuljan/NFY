@@ -28,6 +28,7 @@
         <li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#pretraga" style="margin-top:6px;">
       <img src="<?php echo $put; ?>slike/search.png" style="max-width:20px;">
    </button></li>
+   
 	<?php if(!isset($_SESSION["operater"])):?>
 
      <li class="navbar-text"><a href="<?php echo $put ?>user/formaPrijava.php"><button class="btn2 btn-default"> Prijava</button></a></li>

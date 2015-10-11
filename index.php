@@ -1,6 +1,9 @@
-<?php include_once 'konfiguracija.php';  ?>
+<?php 
+
+
+include_once 'konfiguracija.php';  ?>
 <?php
-	
+
 	$products = $con->prepare("select * from proizvod inner join galerija on galerija.proizvod=proizvod.sifra order by RAND() limit 5;");
 	$products->execute();
 	$proizvodi = $products->fetchAll(PDO::FETCH_OBJ);
