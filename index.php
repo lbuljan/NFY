@@ -11,12 +11,14 @@ include_once 'konfiguracija.php';  ?>
 	$opg = $con->prepare("select * from opg order by RAND() limit 6; ");
 	$opg->execute();
 	$maker = $opg->fetchAll(PDO::FETCH_OBJ);
+	
+	//print_r($_SESSION);
 
 ?>
 <!doctype html>
 <html>
 	<head>
-		<?php 	include_once 'head.php';  ?>
+		<?php  	include_once 'head.php'; ?>
 	</head>
 	
 	<body>

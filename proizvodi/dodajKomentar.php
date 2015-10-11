@@ -1,9 +1,9 @@
 <?php 	include_once '../konfiguracija.php';  ?>
 <?php 
 	if(isset($_POST["kor"])):
-			$dodaj = $con->prepare("insert into komentar(korisnik, na_opg, komentar, vrijeme) values (:u, :o, :k, now());");
+			$dodaj = $con->prepare("insert into komentar(korisnik, proizvod, komentar, vrijeme) values (:u, :p, :k, now());");
 			$dodaj->bindParam(":u", $_SESSION["operater"]->sifra);
-			$dodaj->bindParam(":o", $_POST["o"]);
+			$dodaj->bindParam(":p", $_POST["p"]);
 			$dodaj->bindParam(":k", $_POST["k"]);
 			$dodaj->execute();
 			echo "OK";

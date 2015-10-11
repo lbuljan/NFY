@@ -1,5 +1,5 @@
 <?php 	include_once '../konfiguracija.php'; 
-//print_r($_SESSION);
+
  ?>
 <!doctype html>
 <html>

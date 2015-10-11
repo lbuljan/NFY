@@ -29,7 +29,7 @@
       <img src="<?php echo $put; ?>slike/search.png" style="max-width:20px;">
    </button></li>
    
-	<?php if(!isset($_SESSION["operater"])):?>
+	<?php   if(!isset($_SESSION["operater"])):?>
 
      <li class="navbar-text"><a href="<?php echo $put ?>user/formaPrijava.php"><button class="btn2 btn-default"> Prijava</button></a></li>
       <li class="navbar-text"><a href="<?php echo $put ?>user/formaRegistracijaKorisnik.php"><button class="btn2 btn-default">Registracija kao korisnik</button></a></li>
@@ -45,7 +45,7 @@
 	 <?php endif;?>
 	 <li class="navbar-text"><a href="<?php echo $put ?>odjava.php"><button class="btn2 btn-default">Odjava</button></a></li>
 	<?php endif;?>
-    
+   
     </ul>
 
   </div><!--/.nav-collapse -->
@@ -64,14 +64,19 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Košarica</h4>
       </div>
+	  
       <div class="modal-body">
 	  <?php 
+	  if(isset($_SESSION["operater"])):
 		$history = $con->prepare("select * from kor_pr inner join proizvod on kor_pr.proizvod=proizvod.sifra where korisnik=:k and potvrdi=0");
+		
 		$history->bindParam(":k", $_SESSION["operater"]->sifra);
+		
 		$history->execute();
 		$kupljeno = $history->fetchAll(PDO::FETCH_OBJ);
 		
 	  ?>
+	   
 	  <?php foreach($kupljeno as $hs):
 		$slike = $con->prepare("select naslovna from galerija where proizvod=:p");
 		$slike->bindParam(":p", $hs->sifra);
@@ -105,7 +110,8 @@
 				</div>
 			</div>
 			</div>
-		<?php endforeach;?>
+		<?php endforeach;
+		endif;?>
       </div>
       <div class="row">
       <div class="col-xs-12">
