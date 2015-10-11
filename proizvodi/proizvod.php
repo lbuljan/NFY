@@ -114,7 +114,15 @@
 		</div>
 	
 </div>
-
+<div class="row">
+	<?php if(!isset($_SESSION["operater"]->naziv)):?>
+		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
+			<button class="btn1 btn-default" id="add_basket"> <img src="<?php echo $put;?>slike/kolica.png" alt="Košarica:"/> Dodaj u košaricu</button>
+			<input type="text" id="kolicina" placeholder="1"/>
+		</div>
+		<?php endif;?>
+	
+</div>
 <div class="row">
 	<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 	<h1>Kratki opis</h1>
@@ -190,7 +198,7 @@
 
 </div>
 
-<?php if($_SESSION["operater"]->naziv):?>
+<?php if(isset($_SESSION["operater"]->naziv)):?>
 <div class="row">
 	<div class="col-md-10 col-md-push-1">
 		<div class="komentari">
@@ -204,7 +212,7 @@
 	</div>
 </div>
 <?php endif;?>
-<?php if($_SESSION["operater"]->ime):?>
+<?php if(isset($_SESSION["operater"]->ime)):?>
 <div class="row">
 		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 		<div class="komentari">
@@ -221,19 +229,28 @@
 
 <script>
 	$("#add_basket").click(function(){
-		var projekt = $("#projekt").val();
-		var operater = $("#operater").val();
-		var komentar = $("#komentar").val();
+		var proizvod = $("#proizvod").val();
+		var kolicina = $("#kolicina").val();
+		
+		if(!kolicina){
+			var kolicina=1;
+		}else{
+			if($.isNumeric(kolicina)){
+			}else{
+				alert("Količina mora biti brojčana vrijednost");
+				return false;
+			};
+		};
 		$.ajax({
       			type: 'POST',
       			url: "dodajBasket.php",
-      			data: "k=" + komentar + "&p=" + projekt + "&u=" + operater,
+      			data: "k=" + kolicina + "&p=" + proizvod,
       			dataType: 'text'
     			}).done(function(rezultat) {
     				
         			if(rezultat=="OK"){
         				
-        				alert("Komentar dodan!");
+        				alert("Dodano u košaricu!");
    						location.reload();
    					}else{
    						alert(rezultat);

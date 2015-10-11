@@ -38,11 +38,11 @@
      <li class="navbar-text"> <a href="<?php echo $put ?>user/formaRegistracijaOpg.php"><button class="btn2 btn-default">Registracija kao OPG</button></a></li>
 
   <?php else:?>
-	<?php if($_SESSION["operater"]->ime):?>
+	<?php if(isset($_SESSION["operater"]->ime)):?>
 		<li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
 		<li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#myModal">Košarica</button></li>
      <?php endif;?>
-	 <?php if($_SESSION["operater"]->naziv):?>
+	 <?php if(isset($_SESSION["operater"]->naziv)):?>
 		<li class="navbar-text"><a href="<?php echo $put ?>user/opg.php"> <button class="btn2 btn-default">Profil</button></a></li>
 	 <?php endif;?>
 	 <li class="navbar-text"><a href="<?php echo $put ?>odjava.php"><button class="btn2 btn-default">Odjava</button></a></li>
@@ -55,10 +55,12 @@
 
 <?php
 
-		$kupljeno = $con->prepare("select * from kor_pr inner join proizvod on proizvod.sifra=kor_pr.proizvod where korisnik=:s");
+		$kupljeno = $con->prepare("select * from proizvod inner join kor_pr on proizvod.sifra=kor_pr.proizvod where kor_pr.korisnik=:s");
 		$kupljeno->bindParam(":s", $_SESSION["operater"]->sifra);
 		$kupljeno->execute();
 		$history = $kupljeno->fetchAll(PDO::FETCH_OBJ);
+		
+		print_r($history);
 ?>	
 
 <!-- Trigger the modal with a button -->
