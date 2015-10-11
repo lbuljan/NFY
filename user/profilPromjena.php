@@ -32,15 +32,15 @@
 <div class="col-lg-5 col-lg-push-1 col-md-5 col-md-push-1 col-sm-5 col-sm-push-1 col-xs-10 col-xs-push-1">
 	<h1 class="naslov1">
 		<input class="log" type="text" id="ime" name="ime" value="<?php echo $korisnik->ime?>" />
-		<input class="log" type="text" id="ime" name="ime" value="<?php echo $korisnik->prezime?>" /></h1>
+		<input class="log" type="text" id="prezime" name="prezime" value="<?php echo $korisnik->prezime?>" /></h1>
 		<p class="adresa">
-			<input class="log" type="text" id="ime" name="ime" value="<?php echo $korisnik->adresa;?>" /> <br />
+			<input class="log" type="text" id="adresa" name="adresa" value="<?php echo $korisnik->adresa;?>" /> <br />
 		</p>
-		<input class="log" type="text" id="ime" name="ime" value="<?php echo $korisnik->grad;?>" /><br />
-		<input class="log" type="text" id="ime" name="ime" value="<?php echo $korisnik->post_broj;?>" /> <br />
+		<input class="log" type="text" id="grad" name="grad" value="<?php echo $korisnik->grad;?>" /><br />
+		<input class="log" type="text" id="post_broj" name="post_broj" value="<?php echo $korisnik->post_broj;?>" /> <br />
 		
 			<p class="adresa" style="margin-top:10px;">
-				<input class="log" type="text" id="ime" name="ime" value="<?php echo $korisnik->email;?>"/>
+				<input class="log" type="text" id="email" name="email" value="<?php echo $korisnik->email;?>"/>
 			</p>
 		
 	</div>

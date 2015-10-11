@@ -38,7 +38,7 @@
 	<div class="row profil">
 		<div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-sm-push-1 col-xs-10 col-xs-push-1">
 			<h1 class="naslov1"> <?php echo $prod->naziv;?> <small style="font-size: 0.5em; margin-left: 5%;"><?php echo $prod->kategorija;?></small> 
-				<a href="<?php echo $put; ?>proizvod/proizvodPromjena.php" style="font-size:13px;margin-left:10px;">
+				<a href="<?php echo $put; ?>proizvodi/proizvodPromjena.php?p=<?php echo $_GET["p"];?>" style="font-size:13px;margin-left:10px;">
 					Uredi
 				</a><hr/> <h1>
 		</div>
