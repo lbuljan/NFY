@@ -589,21 +589,23 @@ padding: 20px;
 .opg_slika {
   height: 70%;
   width: 70%;
-  transition: width 0.2s, height 0.2s;
   border:5px solid #efefef;
   margin-bottom:10px;
+  transition: all .2s ease-in-out;
  
 
 }
 
 .opg_slika:hover {
-  width:75%;
-  height: 75%;
- transition: width 0.2s, height 0.2s;
+ transform: scale(1.1);
+transition: all .2s ease-in-out;
  padding: 0px 0px 0px 0px;
-    background-size: 100% 100%;
+
     background-repeat: no-repeat;
-background-position: center center;}
+background-position: center center;
+left:-25px;
+right:-25px;
+}
 
 
 
@@ -642,16 +644,23 @@ background-position: center center;}
 }
 
 .proizvodi_slika {
-  height: 80%;
-  width: 80%;
-  transition: width 0.2s, height 0.2s;
-  border:10px solid #efefef;  
+  height: 70%;
+  width: 70%;
+  border:5px solid #efefef;
+  margin-bottom:10px;
+  transition: all .2s ease-in-out;
+ 
 }
 
 .proizvodi_slika:hover {
-  width:85%;
-  height: 85%;
- transition: width 0.2s, height 0.2s
+ transform: scale(1.1);
+transition: all .2s ease-in-out;
+ padding: 0px 0px 0px 0px;
+
+    background-repeat: no-repeat;
+background-position: center center;
+left:-25px;
+right:-25px;
 }
 
 .komentar {
@@ -702,6 +711,7 @@ background-position: center center;}
 .prf {
   width:200px;
   height:200px;
+    transition: all .2s ease-in-out;
   tranzition:height 0.2s, width:0.2s;
   -webkit-border-top-left-radius: 1px;
   -webkit-border-top-right-radius: 2px;
@@ -720,7 +730,13 @@ background-position: center center;}
 }
 
 .prf:hover {
-  width:210px;
-  height:210px;
-  tranzition:height 0.2s, width:0.2s;
-} 
+ transform: scale(1.1);
+transition: all .2s ease-in-out;
+ padding: 0px 0px 0px 0px;
+
+    background-repeat: no-repeat;
+background-position: center center;
+left:-25px;
+right:-25px;
+}
+
