@@ -31,7 +31,6 @@ else:
 	$proizvod->bindParam(":o", $_SESSION["operater"]->sifra);
 	$proizvod->execute();
 	$proizvodi = $proizvod->fetchAll(PDO::FETCH_OBJ);
-	print_r($proizvodi);
 endif;
 	
 	?>
@@ -54,21 +53,25 @@ endif;
 	 <?php if(isset($_SESSION["operater"]->naziv)):?>
 		<input type="hidden" id="opg" value="<?php echo $_SESSION["operater"]->sifra;?>"/>
 	<?php endif;?>
-	<div class="banner">
+	<div class="banner" style="padding-top: 50px;">
 		<div class="row">
-			<div class="col-lg-8 col-lg-push-4 col-md-10 col-md-push-4 col-sm-10 col-sm-push-3 col-xs-10 col-xs-push-1">
+			<div class="col-xs-12">
 				<?php if($podaci->profilna):?>
-					<img style="border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;" src="<?php echo $put;?>slike/opg/<?php echo $podaci->profilna;?>" class="img-responsive" />
+					<img style="margin-left: auto; margin-right: auto;" src="<?php echo $put;?>slike/opg/<?php echo $podaci->profilna;?>" />
 				<?php else:?>
-					<img src="<?php echo $put;?>slike/opg/placeholder.png" class="img-responsive"/>
+					<img src="<?php echo $put;?>slike/opg/placeholder.png" style="height: 175px; width: 175px;"/>
 				<?php endif;?>
 			</div>
 			<div class="col-xs-12">
 				<h1> <?php echo $podaci->naziv;?>
-
-				<a href="<?php echo $put; ?>user/opgPromjena.php" style="font-size:13px;margin-left:10px;color:white;">
+				<?php if(!isset($_GET["o"])):?>
+				<a href="<?php echo $put; ?>user/opgPromjena.php?o=<?php echo $_SESSION["operater"]->sifra;?>" style="font-size:13px;margin-left:10px;color:white;">
+				<?php else:?>
+				<a href="<?php echo $put; ?>user/opgPromjena.php?o=<?php echo $_GET["o"];?>" style="font-size:13px;margin-left:10px;color:white;">
 					Uredi
 				</a>
+				<?php endif;
+				?>
 				</h1>
 			</div>
 		</div>

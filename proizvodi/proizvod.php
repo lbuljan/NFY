@@ -176,7 +176,7 @@
 			$opg->execute();
 			$kojiopg = $opg->fetch(PDO::FETCH_OBJ);?>
 			
-			<div class="col-md-10 col-md-push-1">
+			<div class="col-xs-10 col-xs-push-1">
 				<?php if($kojiopg->profilna):?>
 					<img src="<?php echo $put ?>slike/opg/<?php echo $kojiopg->profilna;?>" style="max-height:50px;margin-left: 20px;margin-right:20px;margin-top:10px;" /> 
 						<p> <?php echo $kojiopg->naziv;?> </p>
@@ -200,7 +200,7 @@
 				$kor->execute();
 				$kojikor = $kor->fetch(PDO::FETCH_OBJ);?>
 				
-			<div class="col-md-10 col-md-push-1">
+			<div class="col-xs-10 col-xs-push-1">
 				<?php if($kojikor->profilna):?>
 					<img src="<?php echo $put ?>slike/korisnik/<?php echo $kojikor->profilna;?>" style="max-height:50px;margin-left: 20px;margin-right:20px;margin-top:10px;" /> 
 						<p> <?php echo $kojikor->naziv;?> </p>
@@ -219,7 +219,7 @@
 
 <?php if(isset($_SESSION["operater"]->naziv)):?>
 <div class="row">
-	<div class="col-md-10 col-md-push-1">
+	<div class="col-xs-10 col-xs-push-1">
 		<div class="komentari">
 			<h1  style="margin-top:20px;">Komentiraj</h1>
 			<hr style="border-color:black;" />
@@ -233,7 +233,7 @@
 <?php endif;?>
 <?php if(isset($_SESSION["operater"]->ime)):?>
 <div class="row">
-		<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
+		<div class="col-xs-10 col-xs-push-1">
 		<div class="komentari">
 			<h1  style="margin-top:20px;">Komentiraj</h1>
 			<hr style="border-color:black;" />

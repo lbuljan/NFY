@@ -12,6 +12,6 @@ $con = new PDO("mysql:dbname=" . $baza .
 			$user, $pass);
 $con->exec("SET CHARACTER SET utf8");
 $con->exec("SET NAMES utf8");
-
+error_reporting(0);
 session_start();
 

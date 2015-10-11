@@ -41,7 +41,7 @@
         <li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
      <?php endif;?>
 	 <?php if(isset($_SESSION["operater"]->naziv)):?>
-		<li class="navbar-text"><a href="<?php echo $put ?>user/opg.php"> <button class="btn2 btn-default">Profil</button></a></li>
+		<li class="navbar-text"><a href="<?php echo $put ?>user/opg.php?o=<?php echo $_SESSION["operater"]->sifra;?>"> <button class="btn2 btn-default">Profil</button></a></li>
 	 <?php endif;?>
 	 <li class="navbar-text"><a href="<?php echo $put ?>odjava.php"><button class="btn2 btn-default">Odjava</button></a></li>
 	<?php endif;?>
