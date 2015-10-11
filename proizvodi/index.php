@@ -1,10 +1,16 @@
 <?php 	include_once '../konfiguracija.php';  ?>
-<?php
-
-$prod = $con->prepare("select * from proizvod inner join galerija on galerija.proizvod=proizvod.sifra limit 15");
-$prod->execute();
-$proizvod = $prod->fetchAll(PDO::FETCH_OBJ);
-
+<?php //inner join opg_pr on opg_pr.proizvod=proizvod.sifra inner join opg on opg_pr.opg=opg.sifra
+if(isset($_POST["mod"])):
+	$_POST["u"]="%" . $_POST["u"] . "%";
+	$trazi = $con->prepare("select * from proizvod inner join galerija on galerija.proizvod=proizvod.sifra inner join opg_pr on opg_pr.proizvod=proizvod.sifra inner join opg on opg.sifra=opg_pr.opg where ". $_POST['mod']. " like :u;");
+	$trazi->bindParam(":u", $_POST["u"]);
+	$trazi->execute();
+	$proizvod = $trazi->fetchAll(PDO::FETCH_OBJ);
+else:
+	$prod = $con->prepare("select * from proizvod inner join galerija on galerija.proizvod=proizvod.sifra limit 15");
+	$prod->execute();
+	$proizvod = $prod->fetchAll(PDO::FETCH_OBJ);
+endif;
 ?>
 
 <!doctype html>

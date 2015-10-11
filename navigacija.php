@@ -131,23 +131,23 @@
       <div class="modal-body">
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
-				<form action="#" method="POST">
+				<form action="<?php echo $put;?>opg_naslovna.php" method="POST">
 					<p> Pretraži OPG-e </p>
 					<div class="row">
 						<div class="col-xs-5 col-xs-push-1">
-							<input style="width: 100%; " type="text" id="opg_upit" name="opg_upit" />
+							<input style="width: 100%; " type="text" id="u" name="u" />
 						</div>
 						<div class="col-xs-5 col-xs-push-1">
-							<select name="opg_modifier" style="width: 100%;height: 26px;">
-								<option value="opg_naziv" selected> Po nazivu </option>
-								<option value="grad"> Po gradu </option>
+							<select name="mod" style="width: 100%;height: 26px;">
+								<option value="opg.naziv" selected> Po nazivu </option>
+								<option value="opg.grad"> Po gradu </option>
 							</select>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-10 col-xs-push-1" style="text-align: center;">
 						<br/>
-							<button type="button" id="opg_trazi" class="btn btn-default" style="margin-left:10px;">Pretraži</button>
+							<input type="submit" class="btn btn-default" style="margin-left:10px;" value="Pretraži"/>
 						</div>
 					</div>
 				</form>
@@ -157,24 +157,24 @@
 		
 		<div class="row">
 			<div class="col-xs-10 col-xs-push-1">
-				<form action="#" method="POST">
+				<form action="<?php echo $put;?>proizvodi/index.php" method="POST">
 					<p> Pretraži proizvode </p>
 					<div class="row">
 						<div class="col-xs-5 col-xs-push-1">
-							<input style="width: 100%; " type="text" id="pro_upit" name="pro_upit" />
+							<input style="width: 100%; " type="text" id="u" name="u" />
 						</div>
 						<div class="col-xs-5 col-xs-push-1">
-							<select name="pro_modifier" style="width: 100%; height: 26px; ">
-								<option value="kategorija" selected> Po kategoriji </option>
-								<option value="opg"> Po OPG-u </option>
-								<option value="pro_naziv"> Po OPG-u </option>
+							<select name="mod" style="width: 100%; height: 26px; ">
+								<option value="proizvod.kategorija" selected> Po kategoriji </option>
+								<option value="opg.naziv"> Po OPG-u </option>
+								<option value="proizvod.naziv"> Po nazivu </option>
 							</select>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-10 col-xs-push-1" style="text-align: center">
 						<br/>
-							<button type="button" id="pro_trazi" class="btn btn-default" style="margin-left:10px;">Pretraži</button>
+							<input type="submit" class="btn btn-default" style="margin-left:10px;" value="Pretraži"/>
 						</div>
 					</div>
 				</form>
