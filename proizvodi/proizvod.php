@@ -30,12 +30,27 @@
 	 ?>
 
 	 <input type="hidden" id="proizvod" value="<?php echo $_GET["p"];?>"/>
-
+	 <div class="row">
+	 <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+	 <img src="<?php echo $put ?>slike/proizvodi/<?php echo $prod->naslovna;?>" style="width:100%">
+	 </div>
+	 </div>
 	<div class="row profil">
 		<div class="col-lg-4 col-md-4 col-md-push-1 col-sm-4 col-sm-push-1 col-xs-10 col-xs-push-1">
 			<h1> <?php echo $prod->naziv;?> <small style="font-size: 0.5em; margin-left: 5%;"><?php echo $prod->kategorija;?></small> <hr/> <h1>
 		</div>
 	</div>
+	<div class="row">
+	<div class="hidden-lg hidden-md hidden-sm col-xs-10 col-xs-offset-1">
+	<h1>Kratki opis</h1>
+	
+	<div class="opis">
+		<?php echo $prod->k_opis;?>
+	</div>
+
+	
+	</div>
+</div>
 	<div class="row">
 		<div class="col-lg-10 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
 			<div class="col-md-6 col-sm-7" style="text-align: center; line-height: 40px;">
@@ -46,25 +61,25 @@
 						</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 col-sm-4 col-xs-6" style="text-align: left;">
+					<div class="col-md-4 col-sm-4 hidden-xs" style="text-align: left;">
 						<img style="height: 20px; width: 20px;margin-top:-5px" src="<?php echo $put;?>slike/email.png" alt="E-mail:"/>
 						<a href="mailto:<?php echo $tko->email;?>" style="font-size: 1.3em; color: black; text-decoration: none;"> <?php echo $tko->email;?> </a>
 					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6" style="text-align: center;">
+					<div class="col-md-4 col-sm-4 hidden-xs" style="text-align: center;">
 						<img style="height: 20px; width: 20px;" src="<?php echo $put;?>slike/user.png" alt="OPG:" />
 						<a href="<?php echo $put;?>user/opg.php?o=<?php echo $tko->sifra;?>" style="font-size: 1.3em; color: black; text-decoration: none;"> <?php echo $tko->naziv;?> </a>
 					</div>
 				</div>
 				<br/>
 				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="col-md-12 col-sm-12 hidden-xs">
 						<img  style="float:left;height: 25px;margin-top:10px;" src="<?php echo $put;?>slike/lokacija.png" alt="Lokacija:" />
 						<p style="font-size: 1.5em;float:left;margin-left:10px;"> <?php echo $tko->adresa;?> <br /> <?php echo $tko->grad . ", " . $tko->post_broj;?>  </p>
 					</div>
 				</div>
 			</div>
 			
-			<div class="col-md-5 col-sm-4 col-xs-10 col-xs-offset-1">
+			<div class="col-md-5 col-sm-4 hidden-xs">
 
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -125,7 +140,7 @@
 	
 </div>
 <div class="row">
-	<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 col-xs-10 col-xs-push-1">
+	<div class="col-lg-10 col-lg-push-1 col-md-10 col-md-push-1 col-sm-10 col-sm-push-1 hidden-xs">
 	<h1>Kratki opis</h1>
 	
 	<div class="opis">

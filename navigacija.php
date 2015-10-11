@@ -25,7 +25,7 @@
 
     <!-- Right nav -->
     <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#pretraga">
+        <li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#pretraga" style="margin-top:6px;">
       <img src="<?php echo $put; ?>slike/search.png" style="max-width:20px;">
    </button></li>
 	<?php if(!isset($_SESSION["operater"])):?>
@@ -36,8 +36,8 @@
 
   <?php else:?>
 	<?php if(isset($_SESSION["operater"]->ime)):?>
-		<li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
-		<li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#myModal">Košarica</button></li>
+		<li class="navbar-text"><button type="button" class="btn2 btn-default" data-toggle="modal" data-target="#myModal" style="margin-top:6px;"><img src="<?php echo $put; ?>slike/kolica.png"</button></li>
+        <li class="navbar-text"><a href="<?php echo $put ?>user/profil.php"> <button class="btn2 btn-default">Profil</button></a></li>
      <?php endif;?>
 	 <?php if(isset($_SESSION["operater"]->naziv)):?>
 		<li class="navbar-text"><a href="<?php echo $put ?>user/opg.php"> <button class="btn2 btn-default">Profil</button></a></li>
